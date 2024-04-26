@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<book xmlns="http://www.sibawayhi.org/schema/2009/07/sibawayhi"
+      xmlns:typog="http://www.sibawayhi.org/schema/2010/08/typog"
+      xmlns:xlit="http://www.sibawayhi.org/schema/2010/08/xlit">
+    <title>
+       <seg nbr="1">
+          <ar>كتابُ الْجَبْرِ والْمُقابَلةِ</ar>
+      </seg>
+   </title>
+    <صفحة>17</صفحة>
+    <seg nbr="2">
+       <ar>أَلَّفْتُ مِنْ كِتَابِ الْجَبْرِ وَالْمُقَابَلَةِ كِتَابًا مُخْتَصَرًا حَاصِرًا لِلَطِيفِ الْحِسَابِ وَجَلِيلِهِ لِمَا يَلْزَمُ النَّاسُ مِنْ الْحَاجَةِ إلَيْهِ</ar>
+   </seg>
+    <seg nbr="3">
+       <ar>فِي مَوَارِيثِهِمْ وَوَصَايَاهُمْ</ar>
+   </seg>
+    <seg nbr="4">
+       <ar>وَفِي مُقَاسَمَتِهِمْ وَأَحْكَامِهِمْ وَتِجَارَاتِهِمْ</ar>
+   </seg>
+    <seg nbr="5">
+       <ar>وَفِي جَمِيعِ مَا يَتَعَامَلُونَ بِهِ بَيْنَهُمْ مِنْ مِسَاحَةِ الْأَرَضِينَ وَكَرَى الْأَنْهَارِ وَالْهِنْدَسَةِ وَغَيْرِ ذَلِكَ مِنْ وَُجُوهِهِ وَفَنُونِهِ</ar>
+   </seg>
+    <seg nbr="6">
+       <ar>مُقَدَّمًا لِحُسْنِ النِّيَّةِ فِيهِ وَرَاجِيًا لِأَنْ يَنْزِلَهُ أَهْلُ االْأَدَبِ بِفَضْلِ مَا اسْتَوْدَعُوا مِنْ نِعْمِ اللَّهِ تَعَالَى</ar>
+   </seg>
+    <seg nbr="7">
+       <ar>وَجَلِيلُ آلَائِهِ وَجَمِيلِ بَلَائِهِ عِنْدَهُمْ مَنْزِلَتُهُ</ar>
+   </seg>
+    <seg nbr="8">
+       <ar>وَبِاَللَّهِ تَوْفِيقِي فِي هَذَا وَفِي غَيْرِهِ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</ar>
+   </seg>
+    <seg nbr="9">
+       <ar>وَصَلَّى اللَّهُ عَلَى جَمِيعِ الِانْبِيَاءِ وَالْمُرْسَلِينَ</ar>
+   </seg>
+    <bridgehead nbr="1">Number <ar>الْعَدَدُ</ar>
+   </bridgehead>
+   <article>
+    <seg nbr="10">When I looked at what people need for calculation</seg>
+    <seg nbr="11">I found it's all number.</seg>
+    <seg nbr="12">And I found that all numbers are composed from the unit</seg>
+    <seg nbr="13">And the unit is in all the numbers</seg>
+    <seg nbr="14">And I found that whatever may be spoken of in numbers - [well] what surpasses the unit to the ten originates in the unit</seg>
+    <seg nbr="15">Then the ten doubles and triples, as was done with the unit; and from this are twenty and thirty to the completion of one hundred.</seg>
+    <seg nbr="16">
+       <ar>ثُمَّ تُثَنَّى الْمِائَةُ وَتُثَلَّثُ كَمَا فُعِلَ بِالْوَاحِدِ وَبِالْعَشَرَةِ إلَى الْأَلْفِ</ar>
+   </seg>
+    <seg nbr="17">
+       <ar>ثُمَّ كَذَلِكَ تَرَدَّدَ الْأَلْفُ عِنْدَ كُلِّ عَقْدٍ إلَى غَايَةِ الْمُدْرَكِ مِنْ الْعَدَدِ</ar>
+   </seg>
+    <seg nbr="18">And I found that the numbers needed in the calculation of <xlit:ar>الْ-جَبْر</xlit:ar> and <xlit:ar>الْ-مُقابَلَة</xlit:ar>
+       <sp/>
+       <are/>on three types <ar>وَوَجَدْتُ الْأَعْدَادَ الَّتِى يُحْتَاجُ إلَهَا فِي حِسَابِ الْجَبْرِ وَالْمُقَابَلَةِ عَلَى ثَلَاثَةِ ضُرُوبٍ</ar>
+   </seg>
+    <seg nbr="19">and they are <roots/>, and <mals/>, and <free_nbr/>
+       <ar>وَهِى جُذُورٌ وَأَمْوَالٌ وَعَدَدٌ مُفْرَدٍ</ar>
+       <صفحة>17</صفحة> that is neither related to <root/>nor to <mal/>
+       <ar>لَا يُنْسَبُ إلَى جَذْرٍ وَلَا إلَى مَالٍ</ar>
+   </seg>
+    <seg nbr="20">well, the <root/>of them is every <shay/>struck in itself, from the unit and what is above it of numbers, and what is below it of fractions. <ar>فَالْجَذْرُ مِنْهَا كُلُّ شَيْءٍ مَضْرُوبٍ فِي نَفْسِهِ مِنَ الْوَاحِدِ وَمَا فَوْقَهُ مِنَ الْأَعْدَادِ وَمَا دُونَهُ مِنَ الْكُسُورِ</ar>
+   </seg>
+    <seg nbr="21">and the <mal/>is everything gathered from the <root/>struck in itself <ar>وَالْمَالُ كُلُّ مَا اجْتَمَعَ مِنَ الْجَذْرِ الْمَضْرُوبِ فِي نَفْسِهِ</ar>
+   </seg>
+    <seg nbr="22">and the <free_nbr/>is every number articulated without relation to a <root/>or a <mal/>
+       <ar>وَالْعَدَدُ الْمُفْرَدُ كُلُّ مَلْفُوظٍ بِهِ مِنَ الْعَدَدِ بِلَا نِسْبَةٍ إلَى جَذْرٍ وَلَا إلَى مَالٍ</ar>
+   </seg>
+    <seg nbr="23">well, of these three types are what are equivalent to each other <ar>فَمِنْ هَذِهِ الضُّرُوبِ الثَّلَاثَةِ مَا يَعْدِلُ بَعْضُهَا بَعْضًا</ar>
+   </seg>
+    <seg nbr="24">and that is like your saying</seg>
+    <seg nbr="25">
+       <dq>
+          <mals/>equivalent to <roots/>
+      </dq>,</seg>
+    <seg nbr="26">and <dq>
+          <mals/>equivalent to <free_nbr/>
+      </dq>
+   </seg>
+    <seg nbr="27">and <dq>
+          <roots/>equivalent to <free_nbr/>
+      </dq> . <ar>وَهُوَ كَقَوْلِك أَمْوَالٌ تَعْدِلُ جُذُورًا وَأَمْوَالٌ تَعْدِلُ عَدَدًا وَجُذُورٌ تَعْدِلُ عَدَدًا</ar>
+   </seg>
+    <seg nbr="28">as for the <mals/>that are equivalent to the <roots/>
+       <ar>فَأَمَّا الْأَمْوَالُ الَّتِي تَعْدِلُ الْجَذُورَ</ar>
+   </seg>
+    <seg nbr="29">[well, they are] like your saying <dq>
+          a <mal/> <is/> equivalent to five <roots/>
+      </dq>
+       <ar>فَمِثْلُ قَوْلِكَ مَالٌ يَعْدِلُ خَمْسَةَ أَجْذَارِهِ</ar>
+   </seg>
+    <seg nbr="30">so <the/>
+       <root/>
+       <of/>the <mal/>
+       <is/>five <ar>فَجَذْرُ الْمَالِ خَمْسَةٌ</ar>
+   </seg>
+    <seg nbr="31">and the <mal/>
+       <is/>five-and-twenty <ar>وَالْمَالُ خَمْسَةٌ وَعِشْرُونَ</ar>
+   </seg>
+    <seg nbr="32">and it <is/>
+       <the/>like <of/>five <of/>its <roots/>
+       <ar>فَجَذْرُ الْمَالِ خَمْسَةٌ وَالْمَالُ خَمْسَةٌ</ar>
+   </seg>
+    <seg nbr="33">and like your saying <dq>
+          <a/>third <of/>
+          <a/>
+          <mal/>
+          <is/>equivalent to four <roots/>
+      </dq>
+       <ar>وَكَقَوْلِكَ ثُلْثُ مَالِ يَعْدِلُ أَرْبَعَةَ أَجْذَارٍ</ar>
+   </seg>
+    <seg nbr="34">so the entire <mal/>
+       <is/>equivalent to twelve <root/>
+       <ar>فَالْمَالُ كُلُّهُ يَعْدِلُ اثْنَيْ عَشَرَ جَذْرًا</ar>
+   </seg>
+    <seg nbr="35">and it is one hundred four-and-forty <ar>وَهُوَ مِائَةٌ وَأَرْبَعَةٌ وَأَرْبَعُونَ</ar>
+   </seg>
+    <seg nbr="36">and its <root/>is twelve <ar>وَجَذْرُهُ اثْنَيْ عَشَرَ</ar>
+   </seg>
+    <seg nbr="37">
+       <ar>وَمِثْلُ قَوْلِكَ خَمْسَةُ أَمْوَالٍ تَعْدِلُ عَشَرَةَ أَجْذَارٍ</ar>
+   </seg>
+    <seg nbr="38">
+       <ar>فَالْمَالُ الْوَاحِدُ يَعْدِلُ جَذْرَيْنِ وَجَذْرُ الْمَالِ اثْنَانِ وَالْمَالُ أَرْبَعَةٌ</ar>
+   </seg>
+   <seg nbr="39">
+     and likewise, what is greater or lesser of <mals/> is restored to one <mal/>
+       <ar>وَكَذَلِكَ مَا كَثُرَ مِنْ الْأَمْوَالِ أَوْ قَلَّ يُرَدُّ إلَى مَالٍ وَاحِدٍ</ar>
+   </seg>
+   <seg nbr="40">
+     and likewise is done with the <roots/> that [are equivalent to]
+     it [i.e. <mal/>], they are restored to what is like what the
+     <mal/> is restored to. <ar>وَكَذَلِكَ يُفْعَلُ بِمَا عَادَلَهَا مِنْ الْأَجْذَارِ يُرَدُّ
+     إلَى مِثْلِ مَا يُرَدُّ إلَهَا الْمَالُ</ar>
+   </seg>
+   </article>
+</book>
