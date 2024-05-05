@@ -1,0 +1,138 @@
+\documentclass[11pt]{standalone}
+\usepackage{standalone}
+%%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+
+%% \includeonly{fig130}
+
+\usepackage{tikz}
+\usetikzlibrary{%
+ shapes,%
+ arrows,%
+ chains,%
+ positioning,%
+ decorations.pathreplacing,%
+ decorations.pathmorphing,%
+ decorations.text%
+}
+% \usetikzlibrary{external}
+% \tikzexternalize
+% \standaloneenv{my}
+
+\usepackage{fontspec}
+%% \usepackage{xunicode}
+%% \usepackage{xltxtra}
+
+%% \TeXXeTstate=1
+\newfontfamily\arfont[Scale=1.4]{Scheherazade:script=arab}
+%% \newfontfamily\roman{Gentium}
+%% \newfontfamily\ipafamily{Doulos SIL}
+\newfontfamily\ital{Andale Mono}
+\newfontfamily\symfam{Apple Symbols}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%  for Arabic formatting
+%%%%%%%%%%%%%%%%%%%%%%
+% make paragraphs RTL instead of LTR
+
+% get rid of the paragraph indent, otherwise it will
+% appear on the LEFT hand side of the page, instead
+% of the right.
+% \parindent=12pt
+% \parskip=12pt
+
+%% \def\setArabic{\pagedir TRT \bodydir TRT \pardir TRT \textdir TRT}
+%% \def\setLatin {\pagedir TLT \bodydir TLT \pardir TLT \textdir TLT}
+
+%% \usepackage[fullvoc]{arabluatex} % 'voc', 'fullvoc', 'novoc' or 'trans'
+%% \SetTranslitConvention{dmg} % 'dmg', 'loc' or 'arabica'
+%% \SetArbEasy %
+\usepackage{bidi}  %% for xetex, load last
+
+\newcommand{\malwidth}{3}
+\newcommand{\malheight}{\malwidth}
+
+%% xy = 10 roots divided by 4
+\newcommand{\xy}{2.5}
+\newcommand{\rootheight}{\malheight}
+
+\newcommand{\ww}{2 * \xy + \malheight}
+
+\begin{document}
+
+\begin{tikzpicture}
+  % vertical axis
+  \coordinate (Origin) at (0, 0);
+  %% left y
+  \coordinate (LY1)     at (0, \xy);
+  \coordinate (LY2)     at (0, \xy + \malheight);
+  \coordinate (LY3)     at (0, \ww);
+  %% right y
+  \coordinate (RY0)     at (\ww, 0);
+  \coordinate (RY1)     at (\ww, \xy);
+  \coordinate (RY2)     at (\ww, \xy + \malheight);
+  \coordinate (RY3)     at (\ww, \ww);
+  %% bottom x
+  \coordinate (BX1)     at (\xy, 0);
+  \coordinate (BX2)     at (\xy + \malheight, 0);
+  \coordinate (BX3)     at (\ww, 0);
+  %% top x
+  \coordinate (TX0)     at (0, \ww);
+  \coordinate (TX1)     at (\xy, \ww);
+  \coordinate (TX2)     at (\xy + \malheight, \ww);
+  \coordinate (TX3)     at (\ww, \ww);
+
+  % \coordinate (UR)     at (2*\xy + \malheight, 2*\xy + \malheight);
+
+  \draw [very thick] (Origin) -- (LY3);
+  \draw [very thick] (Origin) -- (BX3);
+  % \draw [very thick] (LY3) -- (UR);
+  % \draw [very thick] (X3) -- (UR);
+
+  \draw [very thick] (BX1) -- (TX1);
+  \draw [very thick] (BX2) -- (TX2);
+  \draw [very thick] (BX3) -- (TX3);
+
+  \draw [very thick] (LY1) -- (RY1);
+  \draw [very thick] (LY2) -- (RY2);
+  \draw [very thick] (LY3) -- (RY3);
+
+  \coordinate [label={center:{\arfont ح}}] ()
+  at (+\xy + \malheight/2, +\xy + \malheight + \xy/2);
+  \coordinate [label={center:{\arfont ط}}] ()
+  at (+\xy + \malheight/2, +\xy/2);
+
+  \coordinate [label={center:{\arfont ك‍}}] ()  %% with ZWJ
+  at (+\xy + \malheight + \xy/2, +\xy + \malheight /2);
+  \coordinate [label={center:{\arfont ج‍}}] ()
+  at (+\xy /2, +\xy + \malheight /2);
+
+  \coordinate [label={[rotate=15] center:{\small\RL{\arfont سِتّـة ورُبْع}}}] () at (\xy/2, +\xy/2);
+  \coordinate [label={[rotate=15] center:{\small\RL{\arfont سِتّـة ورُبْع}}}] () at (\xy+\malheight+\xy/2, +\xy/2);
+  \coordinate [label={[rotate=15] center:{\small\RL{\arfont سِتّـة ورُبْع}}}] () at (\xy/2, \xy+\malheight+\xy/2);
+  \coordinate [label={[rotate=15] center:{\small\RL{\arfont سِتّـة ورُبْع}}}] ()
+  at (\xy+\malheight+\xy/2, \xy+\malheight+\xy/2);
+
+
+  \coordinate [label={center:{\Large\arfont المال}}] (Ctr) at (+\xy + \malheight/2, +\xy + \malheight/2);
+  \coordinate [label={below left:{\arfont ا}}] (A) at (\xy + \malheight, \xy + \malheight);
+  \coordinate [label={above right:{\arfont ٮ}}]  (D) at (\xy, \xy);
+
+  %% show lengths
+  \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  (TX0) -- node[above=12pt] {$2.5$} (TX1);
+  \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  (TX1) -- node[above=12pt] {$3$} (TX2);
+  \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  (TX2) -- node[above=12pt] {$2.5$} (TX3);
+
+  \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  (RY3) -- node[right=12pt] {$2.5$} (RY2);
+  \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  (RY2) -- node[right=12pt] {$3$} (RY1);
+  \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  (RY1) -- node[right=12pt] {$2.5$} (RY0);
+
+\end{tikzpicture}
+
+\end{document}
