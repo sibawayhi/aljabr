@@ -8,7 +8,7 @@
           <ar>كتابُ الْجَبْرِ والْمُقابَلةِ</ar>
       </seg>
    </title>
-    <صفحة>17</صفحة>
+    <!-- <صفحة>17</صفحة> -->
     <seg nbr="2">
        <ar>أَلَّفْتُ مِنْ كِتَابِ الْجَبْرِ وَالْمُقَابَلَةِ كِتَابًا مُخْتَصَرًا حَاصِرًا لِلَطِيفِ الْحِسَابِ وَجَلِيلِهِ لِمَا يَلْزَمُ النَّاسُ مِنْ الْحَاجَةِ إلَيْهِ</ar>
    </seg>
@@ -54,7 +54,8 @@
    </seg>
     <seg nbr="19">and they are <roots/>, and <mals/>, and <free_nbr/>
        <ar>وَهِى جُذُورٌ وَأَمْوَالٌ وَعَدَدٌ مُفْرَدٍ</ar>
-       <صفحة>17</صفحة> that is neither related to <root/>nor to <mal/>
+       <!-- <صفحة>17</صفحة> -->
+       that is neither related to <root/>nor to <mal/>
        <ar>لَا يُنْسَبُ إلَى جَذْرٍ وَلَا إلَى مَالٍ</ar>
    </seg>
     <seg nbr="20">well, the <root/>of them is every <shay/>struck in itself, from the unit and what is above it of numbers, and what is below it of fractions. <ar>فَالْجَذْرُ مِنْهَا كُلُّ شَيْءٍ مَضْرُوبٍ فِي نَفْسِهِ مِنَ الْوَاحِدِ وَمَا فَوْقَهُ مِنَ الْأَعْدَادِ وَمَا دُونَهُ مِنَ الْكُسُورِ</ar>

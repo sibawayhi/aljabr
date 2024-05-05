@@ -4,13 +4,19 @@ LANG=ar
 #FIXME: also pass directory path containing article
 ART=aljabr
 
-.PHONY : pre tashkeel
+## PDF sources are in editions/pdfpages
 
-pre:
-	./bin/pretashkeel.sed raw/p${PG}.raw > raw/p${PG}.raw.txt
+## procedure:
+## 0. OCR page at https://www.i2ocr.com/free-online-arabic-ocr
+##    output to raw/pxxx.raw
+## 1. make pre PG=xxx
+##    takes raw/pxxx.raw to raw/pxxx.raw.txt, fixes misspellings
+## 2. Edit raw/pxxx.raw.txt
+## 3. use https://ahmadai.com/shakkala/lang_en for tashkeel
+##    put output in raw/pxxx.xlit
+## 4. make tashkeel PG=xxx fixes some stuff, writes txt/pxxx.txt
+## 5. Edit txt/pxxx.txt to add XML markup, then discard prev stuff
 
-tashkeel:
-	./bin/tashkeel.sed tmp/p${PG}.tmp > txt/p${PG}.txt
 
 2col:
 	java -jar ${SAXON} \
@@ -20,7 +26,16 @@ tashkeel:
 	-o:tmp/aljabr.tex \
 	artid=${ART};
 	(cd tmp && xelatex \
-	aljabr.tex);
+	aljabr.tex \
+	2>&1 > log.latex);
+
+.PHONY : pre tashkeel
+
+pre:
+	./bin/pretashkeel.sed raw/p${PG}.raw > raw/p${PG}.raw.txt
+
+tashkeel:
+	./bin/tashkeel.sed raw/p${PG}.xlit > txt/p${PG}.txt
 
 segnum:
 	cp xml/aljabr.${LANG}.xml ./backups;
