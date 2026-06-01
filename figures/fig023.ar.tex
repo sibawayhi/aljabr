@@ -1,0 +1,70 @@
+%%  x^2 + 10x = 39: x = 3
+\documentclass[tikz]{standalone}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{bidi}
+
+\begin{document}
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\providecommand{\jadhr}{3}
+
+%% X axis coordinates
+\providecommand{\Bx}{5}
+\providecommand{\Ax}{8}
+
+%% Y axis
+\providecommand{\By}{5}
+\providecommand{\Ay}{8}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\A}   {ا}
+\providecommand{\Ba}  {ٮ}
+\providecommand{\Jīm} {ج‍} % ZWJ U+200D
+\providecommand{\Dal} {د}
+\providecommand{\Ha}  {ه}
+\providecommand{\Z}   {ز}
+% \providecommand{\HH}   {ح}
+% \providecommand{\TT}   {ط}
+% \providecommand{\K}    {\tiny ڪ} %% Swash kaf U+06AA
+% \providecommand{\Lam}  {ل}
+% \providecommand{\M}    {م}
+% \providecommand{\N}    {ن}
+
+\begin{tikzpicture}[scale=0.7,font=\Large]
+  %% Baseline X coordinates (RTL): د ج
+  \coordinate [label={below right:{\Ha}}] (H) at (\Ax, 0);
+
+  %% Midline 1 X coordinates (RTL): ٮ
+  \coordinate [label={above right:{\Ba}}] (B) at (\Bx, \By);
+
+  %% Top
+  \coordinate [label={above left:{\Z}}] (Z) at (0, \Ay);
+  \coordinate [label={below left:{\A}}] (A) at (\Ax, \Ay);
+
+  %% surfaces
+  %% māl
+  \draw [thick,red] (\Bx,\By) -- (\Ax,\By)
+  -- (\Ax,\Ay) -- (\Bx,\Ay) -- cycle;
+  \coordinate [label={center:{المال}}] ()
+  at (\Bx + \jadhr/2, \By + \jadhr/2);
+
+  %% lower left square
+  \draw [thick,red] (0,0) -- (\Bx, 0)
+  -- (\Bx,\By) -- (0,\By) -- cycle;
+  \coordinate [label={center:{$٢٥$}}] ()
+  at (0 + \Bx/2, \By/2);
+
+  %% upper left rect (Jīm)
+  \draw [thick] (0,\By) -- (0,\Ay) -- (\Bx,\Ay);
+  \coordinate [label={center:{\Jīm}}] ()
+  at (0 + \Bx/2, \By + \jadhr/2);
+
+  %% lower right rect (Dal)
+  \draw [thick] (\Bx,0) -- (\Ax,0) -- (\Ax,\By);
+  \coordinate [label={center:{\Dal}}] ()
+  at (\Bx + \jadhr/2, \By/2);
+
+\end{tikzpicture}
+\end{document}

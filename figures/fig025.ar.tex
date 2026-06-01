@@ -1,0 +1,107 @@
+%% x^2 + 21 = 10x
+\documentclass{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{bidi}  %% for xetex, load last
+
+\begin{document}
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\providecommand{\jadhr}{3}
+\providecommand{\subjadhr}{2}
+
+%% X axis coordinates
+\providecommand{\Lx}{3}
+\providecommand{\Tx}{5}
+\providecommand{\Bx}{7}
+\providecommand{\Dx}{10}
+
+%% Y axis coordinates
+\providecommand{\Hy}{3}
+\providecommand{\My}{5}
+
+%% xy = 10 jadhrs divided by 4
+\providecommand{\xy}{2.5}
+\providecommand{\jadhrheight}{\jadhr}
+
+\providecommand{\ww}{2 * \xy + \jadhr}
+
+\providecommand{\Jīm}{ج‍} % ZWJ U+200D
+\providecommand{\Kaf}{ڪ} % Swash kaf U+06AA
+
+
+\begin{tikzpicture}[scale=0.7]
+  % vertical axis
+  \coordinate [label={above right:{ن}}] (Origin) at (0, 0);
+  %% Baseline coordinates
+  \coordinate [label={below:{ط}}] (T) at (\Tx, 0);
+  \coordinate [label={below:{ٮ}}] (B) at (\Bx, 0);
+  \coordinate [label={below right:{د}}] (D) at (\Dx, 0);
+
+  %% Midline coordinates
+  % \coordinate [label={center:{ج‍}}] ()
+  % at (+\xy /2, +\xy + \malheight /2);
+  \coordinate [label={left:{ه}}] (H) at (0,   \Hy);
+  \coordinate [label={below:{ز}}] (Z) at (\Lx, \Hy);
+  \coordinate [label={below left:{ح}}] (HH) at (\Tx, \Hy);
+  \coordinate [label={above:{ا}}] (A) at (\Bx, \Hy);
+  \coordinate [label={above right:{\Jīm‌}}] (J) at (\Dx, \Hy);
+
+  %% Topline coordinates
+  \coordinate [label={above left:{م}}] (M) at (0,   \My);
+  \coordinate [label={above:{ل}}] (L) at (\Lx, \My);
+  \coordinate [label={above right:{\Kaf}}] (K) at (\Tx, \My);
+
+  %% Surface A D (mal)
+  \draw [thick, red] (B) -- (D);
+  \coordinate [label={above:{$٣$}}] ()
+  at (+\Bx + \jadhr/2, 0);
+
+  \draw [thick, red] (D) -- (J);
+  \coordinate [label={left:{٣}}] () at (+\Dx, \jadhr/2);
+  \draw [thick, red] (J) -- (A);
+  \coordinate [label={below:{٣}}] ()
+  at (+\Bx + \jadhr/2, \jadhr);
+  \draw [thick, red] (A) -- (B);
+  \coordinate [label={right:{٣}}] () at (+\Bx, \jadhr/2);
+
+  %% connect the two rectangles
+  \draw [thick] (T) -- (B);
+  \draw [thick] (HH) -- (A);
+
+  %% Surface H T
+  \draw [thick] (Origin) -- (T);
+  \coordinate [label={below:{٥}}] ()
+  at (\Tx/2, 0);
+  \draw [thick] (T)      -- (HH);
+  \draw [thick] (HH)    -- (H);
+  \draw [thick] (H)      -- (Origin);
+
+  %% Surface HH B: 1 x 3
+  \draw [thick] (T) -- (HH);
+
+  %% Surface M Z: 3 x 2
+  \draw [thick] (Z) -- (L);
+  \draw [thick] (L) -- (M);
+  \draw [thick] (M) -- (H);
+
+  %% Surface L HH: 2 x 2
+  \draw [thick] (Z)   -- (HH);
+  \coordinate [label={above:{٢}}] ()
+  at (+\Lx + \subjadhr/2, \Hy);
+  \draw [thick] (HH) -- (K);
+  \coordinate [label={left:{٢}}] ()
+  at (+\Tx, \subjadhr/2 + \Hy);
+  \draw [thick] (K)   -- (L);
+  \coordinate [label={below:{٢}}] ()
+  at (+\Lx + \subjadhr/2, \My);
+  \draw [thick] (L)   -- (Z);
+  \coordinate [label={right:{٢}}] ()
+  at (+\Lx, \subjadhr/2 + \Hy);
+
+\end{tikzpicture}
+
+\end{document}

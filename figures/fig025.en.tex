@@ -1,0 +1,151 @@
+%% x^2 + 21 = 10x
+\documentclass{standalone}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{fontspec}
+\usepackage{tikz}
+
+\begin{document}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations,decorations.pathreplacing}
+\usetikzlibrary{patterns}
+\providecommand{\jadhr}{3}
+\providecommand{\subjadhr}{2}
+
+%% X axis coordinates
+\providecommand{\Lx}{3}
+\providecommand{\Tx}{5}
+\providecommand{\Bx}{7}
+\providecommand{\Dx}{10}
+
+%% Y axis coordinates
+\providecommand{\Hy}{3}
+\providecommand{\My}{5}
+
+%% xy = 10 jadhrs divided by 4
+% \providecommand{\xy}{2.5}
+% \providecommand{\jadhrheight}{\jadhr}
+
+% \providecommand{\ww}{2 * \xy + \jadhr}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\A}{\small A}%% {ا}
+\providecommand{\Ba}{\small B}  %% {ٮ}
+\providecommand{\Jīm}{\small J} %% {ج}
+\providecommand{\Dal}{\small D} %% {د}
+\providecommand{\Ha}{\small H}  %% {ه}
+\providecommand{\Z}{\small Z}   %% {ز}
+\providecommand{\HH}{\small Ḥ}  %% {ح}
+\providecommand{\TT}{\small Ṭ}  %% {ط}
+\providecommand{\K}{\small K}   %% {ك}
+\providecommand{\Lam}{\small L} %% {ل}
+\providecommand{\M}{\small M}   %% {م}
+\providecommand{\N}{\small N}   %% {ن}
+
+\begin{tikzpicture}[scale=0.8]
+  % vertical axis
+  \coordinate [label={below left:{\N}}] (N) at (0, 0);
+  %% Baseline coordinates
+  \coordinate [label={below:{\TT}}] (TT) at (\Tx, 0);
+  \coordinate [label={below:{\Ba}}] (B) at (\Bx, 0);
+  \coordinate [label={below right:{\Dal}}] (D) at (\Dx, 0);
+
+  %% Midline coordinates
+  % \coordinate [label={center:{ج‍}}] ()
+  % at (+\xy /2, +\xy + \malheight /2);
+  \coordinate [label={left:{\Ha}}] (H) at (0,   \Hy);
+  \coordinate [label={below:{\Z}}] (Z) at (\Lx, \Hy);
+  \coordinate [label={below left:{\HH}}] (HH) at (\Tx, \Hy);
+  \coordinate [label={above:{\A}}] (A) at (\Bx, \Hy);
+  \coordinate [label={above right:{\Jīm}}] (J) at (\Dx, \Hy);
+
+  \coordinate [label={right:{$x$}}] () at (\Dx, 1.5);
+
+  %% Topline coordinates
+  \coordinate [label={above left:{\M}}] (M) at (0,   \My);
+  \coordinate [label={above:{\Lam}}] (L) at (\Lx, \My);
+  \coordinate [label={above right:{\K}}] (K) at (\Tx, \My);
+
+  %% Shade HH B (Beta surface)
+  \draw[pattern=north west lines, pattern color=black!15]
+  (HH) -- (A) -- (B) -- (TT) -- cycle;
+  \coordinate [label={center:{$\beta$}}] ()
+  at (\Tx + 1, 1.5);
+
+  %% Surface A D (mal)
+  \draw [thick, red] (B) -- (D);
+  \coordinate [label={above:{3}}] ()
+  at (+\Bx + \jadhr/2, 0);
+  \draw [thick, red] (D) -- (J);
+  \coordinate [label={left:{3}}] () at (+\Dx, \jadhr/2);
+  \draw [thick, red] (J) -- (A);
+  \coordinate [label={below:{3}}] ()
+  at (+\Bx + \jadhr/2, \jadhr);
+  \draw [thick, red] (A) -- (B);
+  \coordinate [label={right:{3}}] () at (+\Bx, \jadhr/2);
+
+  \coordinate [label={center:{$x^2$}}] ()
+  at (+\Bx + \jadhr/2, 1.5);
+
+
+  %% connect the two rectangles
+  \draw [thick] (TT) -- (B);
+  \draw [thick] (HH) -- (A);
+
+  %% Surface H T
+  % shade
+  \draw [fill=black!5] (H) -- (HH) -- (TT) -- (N) -- cycle;
+  \draw [thick, red] (N) -- (TT);
+  \coordinate [label={below:{$5=\tfrac{10}{2}$}}] ()
+  at (\Tx/2, 0);
+  \draw [thick] (HH)    -- (H);
+  \draw [thick, red] (H)      -- (N);
+
+  \draw [thick, red] (TT)      -- (HH);
+  % redraw labels
+  \coordinate [label={below:{\Z}}] (Z) at (\Lx, \Hy);
+  \coordinate [label={below left:{\HH}}] (HH) at (\Tx, \Hy);
+  \coordinate [label={center:{$\alpha$}}] () at (2.5, 1.5);
+
+  %% Surface M Z: 3 x 2
+  %% Shade M Z
+  \draw[pattern=north west lines, pattern color=black!15]
+  (M) -- (L) -- (Z) -- (H) -- cycle;
+  \draw [thick] (Z) -- (L);
+  \draw [thick, red] (L) -- (M);
+  \draw [thick, red] (M) -- (H);
+  \coordinate [label={center:{$\beta$}}] ()
+  at (1.5, \Hy + 1);
+
+  %% Surface L HH: 2 x 2
+  \draw [thick, red] (Z)   -- (HH);
+  \coordinate [label={above:{$2$}}] ()
+  at (+\Lx + \subjadhr/2, \Hy);
+  \draw [thick, red] (HH) -- (K);
+  \coordinate [label={left:{2}}] ()
+  at (+\Tx, \subjadhr/2 + \Hy);
+  \draw [thick, red] (K)   -- (L);
+  \coordinate [label={below:{2}}] ()
+  at (+\Lx + \subjadhr/2, \My);
+  \draw [thick, red] (L)   -- (Z);
+  \coordinate [label={right:{2}}] ()
+  at (+\Lx, \subjadhr/2 + \Hy);
+
+  \coordinate [label={center:{$\gamma$}}] ()
+  at (\Lx + 1, \Hy + 1);
+
+  %%%%
+  \coordinate [label={left:{\small $x^2+21=10x$}}] ()
+  at (\Dx, \My);
+  \coordinate [label={left:{\small $\alpha+\beta=21$}}] ()
+  at (\Dx, \My - 0.5);
+  \coordinate [label={left:{
+      \small $\gamma+\alpha+\beta=(\tfrac{10}{2})^2=25$}}] ()
+  at (\Dx, \My - 1);
+
+  % fig label
+  \coordinate [label={below:{\small $x^2 + 21 = 10x\ \therefore\ x=3$}}] ()
+  at (\Dx/2, -0.5);
+
+\end{tikzpicture}
+
+\end{document}

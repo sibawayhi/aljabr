@@ -1,0 +1,122 @@
+\documentclass{standalone}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{fontspec}
+\usepackage{tikz}
+% \usetikzlibrary{decorations}
+% \usetikzlibrary{patterns}
+
+\begin{document}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations,decorations.pathreplacing}
+\usetikzlibrary{patterns}
+
+\providecommand{\jadhr}{4}
+
+%% X axis coordinates (bottom up)
+\providecommand{\Dx}{0}
+\providecommand{\Jx}{\jadhr}
+\providecommand{\Lx} {1.5} %% ?
+\providecommand{\TTx}{2.5} %% ?
+
+%% Y axis coordinates (right axis)
+\providecommand{\HHy}{1.5} %% ?
+\providecommand{\Hy}{3}  %% ?
+\providecommand{\Ay}{4}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\A} {\tiny A}
+\providecommand{\Ba}   {\tiny B}
+\providecommand{\Jīm}  {\tiny J}
+\providecommand{\Dal}  {\tiny D}
+\providecommand{\Ha}   {\tiny H}
+\providecommand{\Z}    {\tiny Z}
+\providecommand{\HH}   {\tiny Ḥ}
+\providecommand{\TT}   {\tiny Ṭ}
+\providecommand{\Kaf}    {\tiny K}
+\providecommand{\Lam}  {\tiny L}
+\providecommand{\M}    {\tiny M}
+\providecommand{\N}    {\tiny N}
+
+\begin{tikzpicture}
+
+  %% Baseline X coordinates (RTL): د ج
+  \coordinate [label={right:{\Jīm}}] (J) at (\Jx, 0);
+  %% origin:
+  \coordinate [label={left:{\Dal}}] (D) at (0, 0);
+
+  %% Midline 1 X coordinates (RTL): ل ط ح
+  \coordinate [label={right:{\HH}}] (HH) at (\Jx, \HHy);
+  \coordinate [label={below:{\TT}}] (TT) at (\TTx, \HHy);
+  \coordinate [label={below:{\Lam}}] (L)  at (\Lx,  \HHy);
+
+  %% Midline 2 X coordinates: ز ن ك ه
+  \coordinate [label={right:{\Ha}}] (H) at (\Jx, \Hy);
+  \coordinate [label={above:{\Kaf}},color=black!5] (K) at (\TTx, \Hy);
+  \coordinate [label={below left:{\N}}] (N) at (\Lx, \Hy);
+  \coordinate [label={left:{\Z}}] (Z) at (0, \Hy);
+
+  %% Topline x coordinates: ٮ م ا
+  \coordinate [label={above right:{\A}}] (A) at (\Jx, \Ay);
+  \coordinate [label={above:{\M}}] (M) at (\Lx, \Ay);
+  \coordinate [label={above left:{\Ba}}] (B) at (0, \Ay);
+
+  %% Shade top rectangle (area = 4)
+  \draw [fill=black!5] (A) -- (M) -- (N) -- (H) -- cycle;
+  \draw[pattern=north west lines, pattern color=black!15]
+  (M) -- (B) -- (Z) -- (N) -- cycle;
+  \draw[pattern=north west lines, pattern color=black!15]
+  (K) -- (N) -- (L) -- (TT) -- cycle;
+
+  % redraw label
+  \coordinate [label={[text=black!40]above:{\Kaf}}] (K) at (\TTx, \Hy);
+
+  %% Borders
+  \draw (Z) -- (H);
+  \draw (K) -- (TT);
+  \draw [thick, red] (D) -- (J) -- (A) -- (B) -- cycle;
+  \draw [thick,red]  (L) -- (HH);
+  \draw [thick,red]  (L) -- (N);
+  \draw [thick,red]  (N) -- (M);
+
+  \coordinate [label={right:{\tiny 1$\frac{1}{2}$}}] ()
+  at (\Jx, .75);
+  \coordinate [label={right:{\tiny 1$\frac{1}{2}$}}] ()
+  at (\Jx, \HHy + .75);
+
+  \coordinate [label={center:{\tiny 2$\frac{1}{4}$}}] ()
+  at (\TTx + .75, \HHy + .75);
+
+  \coordinate [label={right:{\tiny $\alpha+\beta=4$}}] ()
+  at (\Jx, \Hy + .5);
+
+  \coordinate [label={center:{\tiny $\alpha$}}] ()
+  at (\Lx + 1.25, \Hy + .5);
+  \coordinate [label={center:{\tiny $\beta$}}] ()
+  at (.75, \Hy + .5);
+  \coordinate [label={center:{\tiny $\beta$}}] ()
+  at (\Lx + .5, \HHy + .75);
+
+  % left
+  \coordinate [label={left:{\tiny 3}}] ()
+  at (0, \Hy/2 );
+  % bottom
+  \coordinate [label={above:{\tiny $x$}}] ()
+  at (2, 0);
+  % top
+  \coordinate [label={above:{\tiny 1$\frac{1}{2}$}}] ()
+  at (.75, \Ay);
+  \coordinate [label={above:{\tiny
+      $2\frac{1}{2}$}}] ()
+      % =2\frac{1}{2}$
+  at (2.75, \Ay);
+
+  \draw[decorate,decoration={brace,mirror,raise=12pt}]
+  (L) -- node[below=12pt] {\tiny $\sqrt{\alpha+\beta+2\smash[b]{\tfrac{1}{4}}}$}  (HH);
+
+  % fig label
+  \coordinate [label={below:{\small $3x + 4 = x^2$}}] ()
+  at (2, 0);
+
+\end{tikzpicture}
+
+\end{document}

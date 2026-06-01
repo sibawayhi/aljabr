@@ -1,0 +1,112 @@
+\documentclass[tikz]{standalone}
+\usepackage{standalone}
+\usepackage{fontspec}
+% \usepackage{amsmath,amsfonts,amssymb}
+% \usepackage{unicode-math}
+
+% \usepackage[safe=none,bidi=default]{babel}
+% \babelprovide[import, main]{arabic}
+% \babelfont{rm}{Amiri}
+
+\usepackage{bidi}
+
+\begin{document}
+\fontspec[Script=Arabic,Mapping=arabicdigits]{Amiri}
+
+\providecommand{\malwidth}{3}
+\providecommand{\malheight}{\malwidth}
+
+%% xy = 10 roots divided by 4
+\providecommand{\xy}{2.5}
+\providecommand{\rootheight}{\malheight}
+
+\providecommand{\ww}{2 * \xy + \malheight}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\Alif} {ا}
+\providecommand{\Ba}   {ٮ}
+\providecommand{\Jīm}  {ج‍} % ZWJ U+200D
+\providecommand{\Dal}  {د}
+\providecommand{\Ha}   {ه}
+\providecommand{\Z}    {ز}
+\providecommand{\HH}   {ح}
+\providecommand{\TT}   {ط}
+\providecommand{\K}    {\tiny ڪ} %% Swash kaf U+06AA
+\providecommand{\Lam}  {ل}
+\providecommand{\M}    {م}
+\providecommand{\N}    {ن}
+
+\begin{tikzpicture}[scale=0.7]
+  % vertical axis
+  \coordinate (Origin) at (0, 0);
+  %% left y
+  \coordinate (LY1)     at (0, \xy);
+  \coordinate (LY2)     at (0, \xy + \malheight);
+  \coordinate (LY3)     at (0, \ww);
+  %% right y
+  \coordinate (RY0)     at (\ww, 0);
+  \coordinate (RY1)     at (\ww, \xy);
+  \coordinate (RY2)     at (\ww, \xy + \malheight);
+  \coordinate (RY3)     at (\ww, \ww);
+  %% bottom x
+  \coordinate (BX1)     at (\xy, 0);
+  \coordinate (BX2)     at (\xy + \malheight, 0);
+  \coordinate (BX3)     at (\ww, 0);
+  %% top x
+  \coordinate (TX0)     at (0, \ww);
+  \coordinate (TX1)     at (\xy, \ww);
+  \coordinate (TX2)     at (\xy + \malheight, \ww);
+  \coordinate (TX3)     at (\ww, \ww);
+
+  % \coordinate (UR)     at (2*\xy + \malheight, 2*\xy + \malheight);
+
+  \draw (Origin) -- (LY3);
+  \draw (Origin) -- (BX3);
+  % \draw [very thick] (LY3) -- (UR);
+  % \draw [very thick] (X3) -- (UR);
+
+  \draw (BX1) -- (TX1);
+  \draw (BX2) -- (TX2);
+  \draw (BX3) -- (TX3);
+
+  \draw (LY1) -- (RY1);
+  \draw (LY2) -- (RY2);
+  \draw (LY3) -- (RY3);
+
+  \coordinate [label={center:{\HH}}] ()
+  at (+\xy + \malheight/2, +\xy + \malheight + \xy/2);
+  \coordinate [label={center:{ط}}] ()
+  at (+\xy + \malheight/2, +\xy/2);
+
+  \coordinate [label={center:{ك‍}}] ()  %% with ZWJ
+  at (+\xy + \malheight + \xy/2, +\xy + \malheight /2);
+  \coordinate [label={center:{ج‍}}] ()
+  at (+\xy /2, +\xy + \malheight /2);
+
+  \coordinate [label={[rotate=15] center:{\small\RL{سِتّـة ورُبْع}}}] () at (\xy/2, +\xy/2);
+  \coordinate [label={[rotate=15] center:{\small\RL{سِتّـة ورُبْع}}}] () at (\xy+\malheight+\xy/2, +\xy/2);
+  \coordinate [label={[rotate=15] center:{\small\RL{سِتّـة ورُبْع}}}] () at (\xy/2, \xy+\malheight+\xy/2);
+  \coordinate [label={[rotate=15] center:{\small\RL{سِتّـة ورُبْع}}}] ()
+  at (\xy+\malheight+\xy/2, \xy+\malheight+\xy/2);
+
+  \coordinate [label={center:{المال}}] (Ctr) at (+\xy + \malheight/2, +\xy + \malheight/2);
+  \coordinate [label={below left:{ا}}] (A) at (\xy + \malheight, \xy + \malheight);
+  \coordinate [label={above right:{ٮ}}]  (D) at (\xy, \xy);
+
+  %% show lengths
+  % \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  % (TX0) -- node[above=12pt] {$2.5$} (TX1);
+  % \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  % (TX1) -- node[above=12pt] {$3$} (TX2);
+  % \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  % (TX2) -- node[above=12pt] {$2.5$} (TX3);
+
+  % \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  % (RY3) -- node[right=12pt] {$2.5$} (RY2);
+  % \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  % (RY2) -- node[right=12pt] {$3$} (RY1);
+  % \draw[very thick,decorate,decoration={brace,raise=5pt}]
+  % (RY1) -- node[right=12pt] {$2.5$} (RY0);
+
+\end{tikzpicture}
+\end{document}

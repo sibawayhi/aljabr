@@ -1,8 +1,28 @@
+JAVA=java -Dsun.stdout.encoding="UTF-8" -Dsun.stderr.encoding="UTF-8"
 SAXON=/usr/local/share/SaxonHE12-4J/saxon-he-12.4.jar
+XERCES=/usr/local/share/xerces
+
+XINCL=-Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration
+
+CLASSP=${SAXON}:${XERCES}/xercesImpl.jar:${XERCES}/resolver.jar:${XERCES}/xml-apis.jar:${XERCES}/xalan.jar
+
+SRCS=${PWD}/xml
+ENSRC=${PWD}/xml
+SRCDIR=xml
+
 LANG=ar
+XSL=../kitab/work/xsl
+XMLTOOLS=../xmltools
+
+DRAFT=
+TRANS=1
+IGT=
+CMT=
+MULTILING=
 
 #FIXME: also pass directory path containing article
 ART=aljabr
+
 
 ## PDF sources are in editions/pdfpages
 
@@ -12,22 +32,53 @@ ART=aljabr
 ## 1. make pre PG=xxx
 ##    takes raw/pxxx.raw to raw/pxxx.raw.txt, fixes misspellings
 ## 2. Edit raw/pxxx.raw.txt
-## 3. use https://ahmadai.com/shakkala/lang_en for tashkeel
+## 3. use https://www.tashkil.net/tashkil for tashkeel
 ##    put output in raw/pxxx.xlit
+##obsolete: https://ahmadai.com/shakkala/lang_en
 ## 4. make tashkeel PG=xxx fixes some stuff, writes txt/pxxx.txt
 ## 5. Edit txt/pxxx.txt to add XML markup, then discard prev stuff
 
-
 2col:
+	${JAVA} \
+	${XINCL} \
+	-cp ${CLASSP} \
+        net.sf.saxon.Transform  \
+	-x:org.apache.xerces.parsers.SAXParser \
+	-xsl:${XSL}/book2tex.2col.xsl \
+	-s:xml/aljabr.${LANG}.xml \
+	-o:tmp/aljabr.2col.tex \
+	artid=${ART} \
+	argitrev=`cd ${SRCDIR} && git rev-parse --short HEAD` \
+	engitrev=`git rev-parse --short HEAD` \
+	ensrc=${ENSRC}/aljabr.en.xml \
+	draft=${DRAFT} \
+	translate=${TRANS} \
+	igt=${IGT} \
+	commentary=${CMT} \
+	multiling=${MULTILING};
+	(cd tmp && xelatex aljabr.2col.tex \
+	2>&1 > log.latex);
+
+x2col:
 	java -jar ${SAXON} \
 	-xi:on \
+	-xsl:${XSL}/book2tex.2col.xsl \
 	-s:xml/aljabr.${LANG}.xml \
-	-xsl:../xsl/sib.${LANG}2tex.2col.xsl \
 	-o:tmp/aljabr.tex \
-	artid=${ART};
+	artid=${ART} \
+	argitrev=`cd ${SRCDIR} && git rev-parse --short HEAD` \
+	engitrev=`git rev-parse --short HEAD` \
+	ensrc=${ENSRC}/aljabr.en.xml \
+	draft=${DRAFT} \
+	translate=${TRANS} \
+	igt=${IGT} \
+	commentary=${CMT} \
+	multiling=${MULTILING};
 	(cd tmp && xelatex \
 	aljabr.tex \
 	2>&1 > log.latex);
+
+	# -xsl:${XSL}/sib.bab2tex.2col.xsl \
 
 .PHONY : pre tashkeel
 
@@ -42,14 +93,15 @@ segnum:
 	chmod u+w ./backups/aljabr.${LANG}.xml;
 	java -jar ${SAXON} \
 	-s:xml/aljabr.${LANG}.xml \
-	-xsl:../xsl/sib.${LANG}.segnum.xsl \
+	-xsl:${XMLTOOLS}/tools/sib.${LANG}.segnum.xsl \
 	-o:tmp/segnum/aljabr.${LANG}.xml \
 	artid=aljabr;
 	bin/fixspace.sed tmp/segnum/aljabr.${LANG}.xml > xml/aljabr.${LANG}.xml
 
 ar2en:
-	java -jar ${SAXON} \
-	-s:xml/aljabr.ar.xml \
-	-xsl:../xsl/sib.ar2en.xsl \
-	-o:tmp/aljabr.en.xml
+	${JAVA} -jar ${SAXON} \
+	-s:xml/p${P}.ar.xml \
+	-xsl:${XMLTOOLS}/tools/sib.ar2en.xsl \
+	-o:tmp/p${P}.en.xml \
+	artid=${P};
 

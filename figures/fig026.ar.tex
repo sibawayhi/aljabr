@@ -1,0 +1,86 @@
+%% 3x + 4 = x^2
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{bidi}
+% Custom superscript
+% \providecommand{\os}[2]{%
+% \reflectbox{\ensuremath{\reflectbox{\text{#1}}^{\reflectbox{$\scriptstyle\text{#2}$}}}}%
+% }
+
+\begin{document}
+\providecommand{\jadhr}{4}
+% \providecommand{\subjadhr}{2}
+%% X axis coordinates (bottom up)
+\providecommand{\Dx}{0}
+\providecommand{\Jx}{\jadhr}
+\providecommand{\Lx} {1.5} %% ?
+\providecommand{\TTx}{2.5} %% ?
+
+%% Y axis coordinates (right axis)
+\providecommand{\HHy}{1.5} %% ?
+\providecommand{\Hy}{3}  %% ?
+\providecommand{\Ay}{4}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\Alif} {ا}
+\providecommand{\Ba}   {ٮ}
+\providecommand{\Jīm}  {ج‍} % ZWJ U+200D
+\providecommand{\Dal}  {د}
+\providecommand{\Ha}   {ه}
+\providecommand{\Z}    {ز}
+\providecommand{\HH}   {ح}
+\providecommand{\TT}   {ط}
+\providecommand{\K}    {\tiny ڪ} %% Swash kaf U+06AA
+\providecommand{\Lam}  {ل}
+\providecommand{\M}    {م}
+\providecommand{\N}    {ن}
+
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\begin{tikzpicture}
+
+  %% Baseline X coordinates (RTL): د ج
+  \coordinate [label={right:{\Jīm}}] (J) at (\Jx, 0);
+  %% origin:
+  \coordinate [label={left:{\Dal}}] (D) at (0, 0);
+
+  %% Midline 1 X coordinates (RTL): ل ط ح
+  \coordinate [label={right:{\HH}}] (HH) at (\Jx, \HHy);
+  \coordinate [label={below:{\TT}}] (TT) at (\TTx, \HHy);
+  \coordinate [label={below:{\Lam}}] (L)  at (\Lx,  \HHy);
+
+  %% Midline 2 X coordinates: ز ن ك ه
+  \coordinate [label={right:{\Ha}}] (H) at (\Jx, \Hy);
+  \coordinate [label={above:{\K}}] (K) at (\TTx, \Hy);
+  \coordinate [label={below left:{\N}}] (N) at (\Lx, \Hy);
+  \coordinate [label={left:{\Z}}] (Z) at (0, \Hy);
+
+  %% Topline x coordinates: ٮ م ا
+  \coordinate [label={above right:{ا}}] (A) at (\Jx, \Ay);
+  \coordinate [label={above:{م}}] (M) at (\Lx, \Ay);
+  \coordinate [label={above left:{ٮ}}] (B) at (0, \Ay);
+
+  %% Borders
+  \draw [thick, red] (D) -- (J) -- (A) -- (B) -- cycle;
+  \draw [thick]      (L) -- (HH);
+  \draw [thick]      (L) -- (M);
+  \draw [thick]      (Z) -- (H);
+  \draw [thick]      (K) -- (TT);
+
+  \coordinate [label={center:{\small ٢ $\frac{١}{٤}$}}] ()
+  at (\TTx + .75, \HHy + .75);
+
+  % fig label
+  % \coordinate [label={below:{\small%%
+  %     $\os{س}{٢} =
+  %     ٤ +
+  %     \text{س}٣$}}] ()
+  % at (2, 0);
+
+\end{tikzpicture}
+
+\end{document}

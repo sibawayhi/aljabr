@@ -1,0 +1,131 @@
+%%  x^2 + 10x = 39: x = 3
+\documentclass[tikz]{standalone}
+\usepackage{standalone}
+\usepackage{amsmath,amsfonts}
+\usepackage{fontspec}
+
+% \usepackage{tikz}
+% \usetikzlibrary{%
+%  shapes,%
+%  arrows,%
+%  chains,%
+%  positioning,%
+%  decorations.pathreplacing,%
+%  decorations.pathmorphing,%
+%  decorations.text%
+% }
+
+
+\begin{document}
+\providecommand{\malwidth}{3}
+\providecommand{\malheight}{\malwidth}
+
+%% xy = 10 roots divided by 4
+\providecommand{\xy}{2.5}
+\providecommand{\rootheight}{\malheight}
+
+\providecommand{\ww}{2 * \xy + \malheight}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\A} {A}
+\providecommand{\Ba}   {B}
+\providecommand{\Jīm}  {J}
+\providecommand{\Dal}  {D}
+\providecommand{\Ha}   {H}
+\providecommand{\Z}    {Z}
+\providecommand{\HH}   {Ḥ}
+\providecommand{\TT}   {Ṭ}
+\providecommand{\Kaf}  {K}
+\providecommand{\Lam}  {L}
+\providecommand{\M}    {M}
+\providecommand{\N}    {N}
+
+\begin{tikzpicture}[scale=0.7]
+  % vertical axis
+  \coordinate (Origin) at (0, 0);
+  %% left y
+  \coordinate (LY1)     at (0, \xy);
+  \coordinate (LY2)     at (0, \xy + \malheight);
+  \coordinate (LY3)     at (0, \ww);
+  %% right y
+  \coordinate (RY0)     at (\ww, 0);
+  \coordinate (RY1)     at (\ww, \xy);
+  \coordinate (RY2)     at (\ww, \xy + \malheight);
+  \coordinate (RY3)     at (\ww, \ww);
+  %% bottom x
+  \coordinate (BX0)     at (0, 0);
+  \coordinate (BX1)     at (\xy, 0);
+  \coordinate (BX2)     at (\xy + \malheight, 0);
+  \coordinate (BX3)     at (\ww, 0);
+  %% top x
+  \coordinate (TX0)     at (0, \ww);
+  \coordinate (TX1)     at (\xy, \ww);
+  \coordinate (TX2)     at (\xy + \malheight, \ww);
+  \coordinate (TX3)     at (\ww, \ww);
+
+  % \coordinate (UR)     at (2*\xy + \malheight, 2*\xy + \malheight);
+
+  \draw (Origin) -- (LY3);
+  \draw (Origin) -- (BX3);
+  % \draw (LY3) -- (UR);
+  % \draw (X3) -- (UR);
+
+  \draw (BX1) -- (TX1);
+  \draw (BX2) -- (TX2);
+  \draw (BX3) -- (TX3);
+
+  \draw (LY1) -- (RY1);
+  \draw (LY2) -- (RY2);
+  \draw (LY3) -- (RY3);
+
+  \coordinate [label={center:{\HH}}] ()
+  at (+\xy + \malheight/2, +\xy + \malheight + \xy/2);
+  \coordinate [label={center:{\TT}}] ()
+  at (+\xy + \malheight/2, +\xy/2);
+
+  \coordinate [label={center:{\Kaf‍}}] ()  %% with ZWJ
+  at (+\xy + \malheight + \xy/2, +\xy + \malheight /2);
+  \coordinate [label={center:{\Jīm}}] ()
+  at (+\xy /2, +\xy + \malheight /2);
+
+  \coordinate [label={[rotate=15] center:{\small {$6\tfrac{1}{4}$}}}] () at (\xy/2, +\xy/2);
+  \coordinate [label={[rotate=15] center:{\small {$6\tfrac{1}{4}$}}}] () at (\xy+\malheight+\xy/2, +\xy/2);
+  \coordinate [label={[rotate=15] center:{\small {$6\tfrac{1}{4}$}}}] () at (\xy/2, \xy+\malheight+\xy/2);
+  \coordinate [label={[rotate=15] center:{\small {$6\tfrac{1}{4}$}}}] ()
+  at (\xy+\malheight+\xy/2, \xy+\malheight+\xy/2);
+
+  \coordinate [label={center:{\Large $x^2$}}] (Ctr)
+  at (+\xy + \malheight/2, +\xy + \malheight/2);
+  \coordinate [label={below left:{\A}}] (A)
+  at (\xy + \malheight, \xy + \malheight);
+  \coordinate [label={above right:{\Ba}}]  (D)
+  at (\xy, \xy);
+
+  \coordinate [label={left:{\small $x$}}] (Ctr)
+  at (\xy + \malwidth, \xy + \malheight/2);
+  \coordinate [label={above:{\small $x$}}] (Ctr)
+  at (\xy + \malwidth/2, \xy);
+
+
+  %% show lengths
+  \draw
+  (TX0) -- node[above] {$2.5$} (TX1);
+  \draw
+  (TX1) -- node[above] {$3$} (TX2);
+  \draw
+  (TX2) -- node[above] {$2.5$} (TX3);
+
+  \draw
+  (RY3) -- node[right] {$2.5$} (RY2);
+  \draw
+  (RY2) -- node[right] {$3$} (RY1);
+  \draw
+  (RY1) -- node[right] {$2.5$} (RY0);
+
+  % fig label
+  \coordinate [label={below:{$x^2 + 10x = 39$}}] ()
+  at (4, 0);
+
+\end{tikzpicture}
+
+\end{document}
