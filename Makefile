@@ -1,3 +1,17 @@
+## PDF sources are in editions/pdfpages
+
+## procedure:
+## 0. OCR page at https://www.i2ocr.com/free-online-arabic-ocr
+##    output to raw/pxxx.raw
+## 1. make pre PG=xxx
+##    takes raw/pxxx.raw to raw/pxxx.raw.txt, fixes misspellings
+## 2. Edit raw/pxxx.raw.txt
+## 3. use https://www.tashkil.net/tashkil for tashkeel
+##    put output in raw/pxxx.xlit
+##obsolete: https://ahmadai.com/shakkala/lang_en
+## 4. make tashkeel PG=xxx fixes some stuff, writes txt/pxxx.txt
+## 5. Edit txt/pxxx.txt to add XML markup, then discard prev stuff
+
 JAVA=java -Dsun.stdout.encoding="UTF-8" -Dsun.stderr.encoding="UTF-8"
 SAXON=/usr/local/share/SaxonHE12-4J/saxon-he-12.4.jar
 XERCES=/usr/local/share/xerces
@@ -7,7 +21,7 @@ XINCL=-Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.pa
 CLASSP=${SAXON}:${XERCES}/xercesImpl.jar:${XERCES}/resolver.jar:${XERCES}/xml-apis.jar:${XERCES}/xalan.jar
 
 SRCS=${PWD}/xml
-ENSRC=${PWD}/xml
+ENSRC=${PWD}/xml/en
 SRCDIR=xml
 
 LANG=ar
@@ -23,20 +37,6 @@ MULTILING=
 #FIXME: also pass directory path containing article
 ART=aljabr
 
-
-## PDF sources are in editions/pdfpages
-
-## procedure:
-## 0. OCR page at https://www.i2ocr.com/free-online-arabic-ocr
-##    output to raw/pxxx.raw
-## 1. make pre PG=xxx
-##    takes raw/pxxx.raw to raw/pxxx.raw.txt, fixes misspellings
-## 2. Edit raw/pxxx.raw.txt
-## 3. use https://www.tashkil.net/tashkil for tashkeel
-##    put output in raw/pxxx.xlit
-##obsolete: https://ahmadai.com/shakkala/lang_en
-## 4. make tashkeel PG=xxx fixes some stuff, writes txt/pxxx.txt
-## 5. Edit txt/pxxx.txt to add XML markup, then discard prev stuff
 
 2col:
 	${JAVA} \
@@ -86,7 +86,7 @@ pre:
 	./bin/pretashkeel.sed raw/p${PG}.raw > raw/p${PG}.raw.txt
 
 tashkeel:
-	./bin/tashkeel.sed raw/p${PG}.xlit > txt/p${PG}.txt
+	./bin/tashkeel.sed raw/p${PG}.xlit > xml/p${PG}.ar.xml
 
 segnum:
 	cp xml/aljabr.${LANG}.xml ./backups;
@@ -102,6 +102,5 @@ ar2en:
 	${JAVA} -jar ${SAXON} \
 	-s:xml/p${P}.ar.xml \
 	-xsl:${XMLTOOLS}/tools/sib.ar2en.xsl \
-	-o:tmp/p${P}.en.xml \
 	artid=${P};
 
