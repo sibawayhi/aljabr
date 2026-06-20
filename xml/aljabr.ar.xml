@@ -10,17 +10,17 @@
   <!-- <مقطع هوية='٥١٢٠٦'>بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</مقطع> -->
 
   <xi:include href="p015.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p016.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p017.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p018.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p019.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p020.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p021.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p022.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p023.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p024.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p025.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p026.ar.xml" parse="xml" xpointer="element(/1)"/>
+  <!-- <xi:include href="p016.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p017.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p018.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p019.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p020.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p021.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p022.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p023.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p024.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p025.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p026.ar.xml" parse="xml" xpointer="element(/1)"/> -->
   <xi:include href="p027.ar.xml" parse="xml" xpointer="element(/1)"/>
   <xi:include href="p028.ar.xml" parse="xml" xpointer="element(/1)"/>
   <xi:include href="p029.ar.xml" parse="xml" xpointer="element(/1)"/>
@@ -33,8 +33,20 @@
   <xi:include href="p036.ar.xml" parse="xml" xpointer="element(/1)"/>
   <xi:include href="p037.ar.xml" parse="xml" xpointer="element(/1)"/>
   <xi:include href="p038.ar.xml" parse="xml" xpointer="element(/1)"/>
-
   <!-- <xi:include href="p039.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p040.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p041.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p042.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p043.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p044.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p045.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p046.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p047.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p048.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p049.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p050.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p051.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="p052.ar.xml" parse="xml" xpointer="element(/1)"/> -->
   <!-- <xi:include href="p053.ar.xml" parse="xml" xpointer="element(/1)"/> -->
   <!-- <xi:include href="p054.ar.xml" parse="xml" xpointer="element(/1)"/> -->
   <!-- <xi:include href="p067.ar.xml" parse="xml" xpointer="element(/1)"/> -->
