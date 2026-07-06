@@ -1,0 +1,115 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{bidi}
+
+\begin{document}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations,decorations.pathreplacing}
+\usetikzlibrary{patterns}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\A} {A}
+\providecommand{\Ba}   {B}
+\providecommand{\Jīm}  {J} % ZWJ U+200D
+\providecommand{\Dal}  {D}
+\providecommand{\Ha}   {H} % ZWJ U+200D
+\providecommand{\Z}    {Z}
+\providecommand{\HH}   {Ḥ}
+
+\providecommand{\diam}{4pt}
+
+% \providecommand{\TT}   {ط}
+% \providecommand{\K}    {\tiny ڪ} %% Swash kaf U+06AA
+% \providecommand{\Lam}  {ل}
+% \providecommand{\M}    {م}
+% \providecommand{\N}    {ن}
+
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\begin{tikzpicture}[scale=0.4]
+
+  % √(200) = 14.14
+  % 20 - √(200) = 5.8578
+  % √(200) - 10 = 4.14
+
+  %% Baseline X coordinates (RTL): د ج
+  \coordinate [label={below:{\Z}}] (Z) at (10, 0);
+  \fill (Z) circle (\diam);
+  \coordinate [label={below:{\Ba}}] (B) at (0, 0);
+  \fill (B) circle (\diam);
+  \coordinate [label={below:{\Ha}}] (H) at (-14.14, 0);
+  \fill (H) circle (\diam);
+  \coordinate [label={below:{\HH}}] (HH) at (-18.14, 0);
+  \fill (HH) circle (\diam);
+  \coordinate [label={below:{\Dal}}] (D) at (-20, 0);
+  \fill (D) circle (\diam);
+
+  \draw (D) -- (H) -- (B) -- (Z);
+  \coordinate [label={below:{\small $10^{\mbox{\normalsize\pm}}$}}] () at (5, 0);
+
+  \coordinate [label={above:{\scriptsize$\left(\sqrt{200}\right)^{\mbox{\normalsize\pm}}$}}] () at (-7.07, 0);
+  % \draw[decorate,
+  % decoration={brace,raise=4pt,mirror,amplitude=5pt}]
+  % (B) -- node[above=10pt] {\tiny $\sqrt{200}$}  (H);
+
+  \coordinate [label={above:{$\alpha^{\mbox{\normalsize\pm}}$}}] () at (-16.07, 0);
+  % \draw[decorate,
+  % decoration={brace,raise=4pt,amplitude=5pt}]
+  % (HH) -- node[above=10pt] {\footnotesize $\alpha$}  (H);
+
+  \coordinate [label={above:{$\therefore\beta$}}] ()
+  at (-19.07, 0);
+  \draw[decorate,
+  decoration={brace,mirror,raise=14pt,amplitude=5pt}]
+  (D) -- node[below=20pt] {$20^{+}$}  (B);
+
+
+  %% Y axis
+  \coordinate [label={right:{\Jīm}}] (J) at (0, 4.14);
+  \fill (J) circle (\diam);
+  \coordinate [label={right:{\A}}] (A) at (0, 14.14);
+  \fill (A) circle (\diam);
+  \draw (B) -- (J) -- (A);
+
+  \draw[decorate,
+  decoration={brace,mirror,raise=16pt,amplitude=10pt}]
+  (B) -- node[right=26pt] {\small $\sqrt{200}$}  (A);
+  \coordinate [label={right:{$\alpha$}}] () at (0, 2.07);
+  \coordinate [label={right:{\small $10^{-}$}}] () at (0, 9.14);
+
+
+  \coordinate
+[label={right:{$\left[\beta,\alpha^+\right]\Rightarrow\alpha+\beta = 20 - \sqrt{200}$}}] ()
+  at (-20, 14);
+  \coordinate [label={right:{$\left[\sqrt{200},10^{-}\right] \Rightarrow\sqrt{200}-10 = \alpha$}}] ()
+  at (-20, 12);
+
+  \coordinate [label={right:{
+      $\left[10^{+},\alpha^{+}\right]
+      \Rightarrow (10+\alpha)^{+}=\left(\sqrt{200}\right)^{+}$
+    }}] ()
+  at (-20, 10);
+  \coordinate [label={right:{
+      $\left[10^{-},\alpha^{-}\right]
+      \Rightarrow (10+\alpha)^{-}=\left(\sqrt{200}\right)^{-}$
+    }}] ()
+  at (-20, 8);
+
+  \coordinate [label={right:{$(20 - \sqrt{200}) - (\sqrt{200}-10) =
+      (\alpha + \beta) - \alpha = \beta$}}] ()
+  at (-20, 6);
+  % \coordinate [label={right:{$\phantom{(20 - \sqrt{200}) -
+  %       (\sqrt{200}-10)} = (\alpha + \beta) - \alpha = \Beta$}}] ()
+  % at (-16.14, 5);
+  \coordinate [label={right:{$\phantom{(20 - \sqrt{200}) - (\sqrt{200}-10)} \therefore\ 30 - 2\sqrt{200}$}}] ()
+  at (-20, 4);
+
+
+\end{tikzpicture}
+
+\end{document}

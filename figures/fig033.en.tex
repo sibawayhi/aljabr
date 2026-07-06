@@ -1,0 +1,95 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{bidi}
+
+\begin{document}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations,decorations.pathreplacing}
+\usetikzlibrary{patterns}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\A} {A}
+\providecommand{\Ba}   {B}
+\providecommand{\Jīm}  {J} % ZWJ U+200D
+\providecommand{\Dal}  {D}
+\providecommand{\Ha}   {H} % ZWJ U+200D
+\providecommand{\Z}    {Z}
+% \providecommand{\HH}   {ح}
+% \providecommand{\TT}   {ط}
+% \providecommand{\K}    {\tiny ڪ} %% Swash kaf U+06AA
+% \providecommand{\Lam}  {ل}
+% \providecommand{\M}    {م}
+% \providecommand{\N}    {ن}
+
+\providecommand{\diam}{4pt}
+
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\begin{tikzpicture}[scale=0.4]
+
+  % √(200) = 14.14
+  % 20 - √(200) = 5.8578
+  % √(200) - 10 = 4.14
+
+  %% Baseline X coordinates (RTL): د ج
+  \coordinate [label={below right:{\Ba}}] (B) at (0, 0);
+  \fill (B) circle (\diam);
+  \coordinate [label={below:{\Z}}] (Z) at (-10, 0);
+  \fill (Z) circle (\diam);
+  \coordinate [label={below:{\Ha}}] (H) at (-14.14, 0);
+  \fill (H) circle (\diam);
+  \coordinate [label={below:{\Dal}}] (D) at (-20, 0);
+  \fill (D) circle (\diam);
+
+  \draw (D) -- (H) -- (Z) -- (B);
+  \coordinate [label={below:{\small $\alpha^{+}$}}] () at (-12.07,0);
+  \coordinate [label={below:{\small $\beta$}}] () at (-17.07,0);
+
+  \draw[decorate,
+  decoration={brace,raise=4pt,mirror,amplitude=5pt}]
+  (Z) -- node[above=10pt] {\small $\therefore 10$}  (D);
+  \draw[decorate,
+  decoration={brace,raise=4pt,mirror,amplitude=5pt}]
+  (B) -- node[above=10pt] {\footnotesize $10$}  (Z);
+
+  \draw[decorate,
+  decoration={brace,raise=14pt,amplitude=5pt}]
+  (B) -- node[below=18pt] {\footnotesize $\left(\sqrt{200}\right)^{-}$}  (H);
+
+  %% Y axis
+  \coordinate [label={right:{\Jīm}}] (J) at (0, 4.14);
+  \fill (J) circle (\diam);
+  \coordinate [label={right:{\A}}] (A) at (0, 14.14);
+  \fill (A) circle (\diam);
+  \draw (B) -- (J) -- (A);
+
+  \coordinate [label={right:{\small $\alpha$}}] () at (0, 2.07);
+  \coordinate [label={right:{\small $10^{-}$}}] () at (0, 9.14);
+
+  \draw[decorate,
+  decoration={brace,mirror,raise=16pt,amplitude=10pt}]
+  (B) -- node[right=26pt] {\footnotesize $\sqrt{200}$}  (A);
+
+  \coordinate [label={right:{$\left[20,\left(\sqrt{200}\right)^{-}\right]\Rightarrow 20-\sqrt{200} = \beta$}}] ()
+  at (-20, 10);
+
+  \coordinate [label={right:{$\left[\sqrt{200},10^{-}\right]\Rightarrow \sqrt{200}-10 = \alpha$}}] ()
+  at (-20, 8);
+
+  \coordinate [label={
+    right:{$\left[\beta,\alpha^{+}\right]\Rightarrow
+      \beta + \alpha = (20-\sqrt{200}) + (\sqrt{200}-10)$}}
+  ] () at (-20, 6);
+  \coordinate [label={
+    right:{$\phantom{\left[\beta,\alpha^{+}\right]\Rightarrow
+      \beta + \alpha} \therefore\ 10$}}
+  ] () at (-20, 4);
+
+\end{tikzpicture}
+
+\end{document}

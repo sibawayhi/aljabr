@@ -1,0 +1,57 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{bidi}
+
+\begin{document}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\A} {ا}
+\providecommand{\Ba}   {ٮ}
+\providecommand{\Jīm}  {ج‍} % ZWJ U+200D
+\providecommand{\Dal}  {د}
+\providecommand{\Ha}   {ه‍} % ZWJ U+200D
+\providecommand{\Z}    {ز}
+\providecommand{\HH}   {ح}
+\providecommand{\TT}   {ط}
+\providecommand{\K}    {\tiny ڪ} %% Swash kaf U+06AA
+\providecommand{\Lam}  {ل}
+\providecommand{\M}    {م}
+\providecommand{\N}    {ن}
+
+\providecommand{\diam}{4pt}
+
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\begin{tikzpicture}[scale=0.3]
+
+  % √(200) = 14.14
+  % 20 - √(200) = 5.8578
+  % √(200) - 10 = 4.14
+
+  %% Baseline X coordinates (RTL): د ج
+  \coordinate [label={below right:{\Ba}}] (B) at (0, 0);
+  \fill (B) circle (\diam);
+  \coordinate [label={below:{\Z}}] (Z) at (-10, 0);
+  \fill (Z) circle (\diam);
+  \coordinate [label={below:{\Ha}}] (H) at (-14.14, 0);
+  \fill (H) circle (\diam);
+  \coordinate [label={below:{\Dal}}] (D) at (-20, 0);
+  \fill (D) circle (\diam);
+
+  \draw (D) -- (H) -- (Z) -- (B);
+
+  %% X axis
+  \coordinate [label={right:{\Jīm}}] (J) at (0, 4.14);
+  \fill (J) circle (\diam);
+  \coordinate [label={right:{\A}}] (A) at (0, 14.14);
+  \fill (A) circle (\diam);
+  \draw (B) -- (J) -- (A);
+
+\end{tikzpicture}
+
+\end{document}
