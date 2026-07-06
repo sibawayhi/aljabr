@@ -46,7 +46,7 @@
   %% left y
   \coordinate (LY1)     at (0, \xy);
   \coordinate (LY2)     at (0, \xy + \malheight);
-  \coordinate (LY3)     at (0, \ww);
+  \coordinate [label={above left:{D}}] (LY3) at (0, \ww);
   %% right y
   \coordinate (RY0)     at (\ww, 0);
   \coordinate (RY1)     at (\ww, \xy);
@@ -56,7 +56,7 @@
   \coordinate (BX0)     at (0, 0);
   \coordinate (BX1)     at (\xy, 0);
   \coordinate (BX2)     at (\xy + \malheight, 0);
-  \coordinate (BX3)     at (\ww, 0);
+  \coordinate [label={below right:{H}}] (BX3) at (\ww, 0);
   %% top x
   \coordinate (TX0)     at (0, \ww);
   \coordinate (TX1)     at (\xy, \ww);

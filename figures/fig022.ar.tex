@@ -27,7 +27,7 @@
 \providecommand{\Ba}   {ٮ}
 \providecommand{\Jīm}  {ج‍} % ZWJ U+200D
 \providecommand{\Dal}  {د}
-\providecommand{\Ha}   {ه}
+\providecommand{\Ha}   {ه‍} % ZWJ U+200D
 \providecommand{\Z}    {ز}
 \providecommand{\HH}   {ح}
 \providecommand{\TT}   {ط}
@@ -42,7 +42,8 @@
   %% left y
   \coordinate (LY1)     at (0, \xy);
   \coordinate (LY2)     at (0, \xy + \malheight);
-  \coordinate (LY3)     at (0, \ww);
+  \coordinate [label={above left:{د}}] (LY3) at (0, \ww);
+
   %% right y
   \coordinate (RY0)     at (\ww, 0);
   \coordinate (RY1)     at (\ww, \xy);
@@ -51,7 +52,8 @@
   %% bottom x
   \coordinate (BX1)     at (\xy, 0);
   \coordinate (BX2)     at (\xy + \malheight, 0);
-  \coordinate (BX3)     at (\ww, 0);
+  \coordinate [label={below right:{\Ha}}] (BX3) at (\ww, 0);
+
   %% top x
   \coordinate (TX0)     at (0, \ww);
   \coordinate (TX1)     at (\xy, \ww);
@@ -92,6 +94,7 @@
   \coordinate [label={center:{المال}}] (Ctr) at (+\xy + \malheight/2, +\xy + \malheight/2);
   \coordinate [label={below left:{ا}}] (A) at (\xy + \malheight, \xy + \malheight);
   \coordinate [label={above right:{ٮ}}]  (D) at (\xy, \xy);
+
 
   %% show lengths
   % \draw[very thick,decorate,decoration={brace,raise=5pt}]

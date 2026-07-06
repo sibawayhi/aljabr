@@ -20,13 +20,12 @@ XINCL=-Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.pa
 
 CLASSP=${SAXON}:${XERCES}/xercesImpl.jar:${XERCES}/resolver.jar:${XERCES}/xml-apis.jar:${XERCES}/xalan.jar
 
-SRCS=${PWD}/xml
-ENSRC=${PWD}/xml/en
+ENSRC=${PWD}/../work/en
 SRCDIR=xml
 
 LANG=ar
-XSL=../kitab/work/xsl
-XMLTOOLS=../xmltools
+XSL=../../kitab/work/xsl
+XMLTOOLS=../../xmltools
 
 DRAFT=
 TRANS=1

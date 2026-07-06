@@ -29,13 +29,14 @@
 
 \providecommand{\ww}{2 * \xy + \jadhr}
 
+\providecommand{\Ha}{ه‍} % ZWJ U+200D
 \providecommand{\Jīm}{ج‍} % ZWJ U+200D
 \providecommand{\Kaf}{ڪ} % Swash kaf U+06AA
 
 
 \begin{tikzpicture}[scale=0.7]
   % vertical axis
-  \coordinate [label={above right:{ن}}] (Origin) at (0, 0);
+  \coordinate [label={below left:{ن}}] (Origin) at (0, 0);
   %% Baseline coordinates
   \coordinate [label={below:{ط}}] (T) at (\Tx, 0);
   \coordinate [label={below:{ٮ}}] (B) at (\Bx, 0);
@@ -44,7 +45,7 @@
   %% Midline coordinates
   % \coordinate [label={center:{ج‍}}] ()
   % at (+\xy /2, +\xy + \malheight /2);
-  \coordinate [label={left:{ه}}] (H) at (0,   \Hy);
+  \coordinate [label={left:{\Ha}}] (H) at (0,   \Hy);
   \coordinate [label={below:{ز}}] (Z) at (\Lx, \Hy);
   \coordinate [label={below left:{ح}}] (HH) at (\Tx, \Hy);
   \coordinate [label={above:{ا}}] (A) at (\Bx, \Hy);
