@@ -6,43 +6,38 @@
 % \usetikzlibrary{patterns}
 
 \begin{document}
-\usetikzlibrary{decorations}
-\usetikzlibrary{decorations,decorations.pathreplacing}
-\usetikzlibrary{patterns}
-
-\providecommand{\jadhr}{4}
-
+\usetikzlibrary{decorations}%
+\usetikzlibrary{decorations,decorations.pathreplacing}%
+\usetikzlibrary{patterns}%
+\providecommand{\jadhr}{4}%
 %% X axis coordinates (bottom up)
-\providecommand{\Dx}{0}
-\providecommand{\Jx}{\jadhr}
+\providecommand{\Dx}{0}%
+\providecommand{\Jx}{\jadhr}%
 \providecommand{\Lx} {1.5} %% ?
 \providecommand{\TTx}{2.5} %% ?
-
 %% Y axis coordinates (right axis)
 \providecommand{\HHy}{1.5} %% ?
 \providecommand{\Hy}{3}  %% ?
-\providecommand{\Ay}{4}
-
+\providecommand{\Ay}{4}%
 %% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
-\providecommand{\A} {\tiny A}
-\providecommand{\Ba}   {\tiny B}
-\providecommand{\Jīm}  {\tiny J}
-\providecommand{\Dal}  {\tiny D}
-\providecommand{\Ha}   {\tiny H}
-\providecommand{\Z}    {\tiny Z}
-\providecommand{\HH}   {\tiny Ḥ}
-\providecommand{\TT}   {\tiny Ṭ}
-\providecommand{\Kaf}    {\tiny K}
-\providecommand{\Lam}  {\tiny L}
-\providecommand{\M}    {\tiny M}
-\providecommand{\N}    {\tiny N}
-
-\begin{tikzpicture}
+\providecommand{\A} {\tiny A}%
+\providecommand{\Ba}   {\tiny B}%
+\providecommand{\Jīm}  {\tiny J}%
+\providecommand{\Dal}  {\tiny D}%
+\providecommand{\Ha}   {\tiny H}%
+\providecommand{\Z}    {\tiny Z}%
+\providecommand{\HH}   {\tiny Ḥ}%
+\providecommand{\TT}   {\tiny Ṭ}%
+\providecommand{\Kaf}    {\tiny K}%
+\providecommand{\Lam}  {\tiny L}%
+\providecommand{\M}    {\tiny M}%
+\providecommand{\N}    {\tiny N}%
+\begin{tikzpicture}[scale=1.0]
 
   %% Baseline X coordinates (RTL): د ج
-  \coordinate [label={right:{\Jīm}}] (J) at (\Jx, 0);
+  \coordinate [label={below right:{\Jīm}}] (J) at (\Jx, 0);
   %% origin:
-  \coordinate [label={left:{\Dal}}] (D) at (0, 0);
+  \coordinate [label={below left:{\Dal}}] (D) at (0, 0);
 
   %% Midline 1 X coordinates (RTL): ل ط ح
   \coordinate [label={right:{\HH}}] (HH) at (\Jx, \HHy);
@@ -111,10 +106,10 @@
   at (2.75, \Ay);
 
   \draw[decorate,decoration={brace,mirror,raise=12pt}]
-  (L) -- node[below=12pt] {\tiny $\textrm{AMLḤ}=\sqrt{\alpha+\beta+2\smash[b]{\tfrac{1}{4}}}$}  (HH);
+  (L) -- node[below=12pt] {\tiny $\sqrt{\alpha+\beta+2\smash[b]{\tfrac{1}{4}}}$}  (HH);
 
   % fig label
-  \coordinate [label={below:{\small $3x + 4 = x^2$}}] ()
+  \coordinate [label={below:{\tiny$\therefore\ x=4$}}] ()
   at (2, 0);
 
 \end{tikzpicture}

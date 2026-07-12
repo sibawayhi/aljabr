@@ -58,6 +58,12 @@ ART=aljabr
 	(cd tmp && xelatex aljabr.2col.tex \
 	2>&1 > log.latex);
 
+idx:
+	(cd tmp && makeindex aljabr.2col.idx); \
+	(cd tmp && makeindex -s ../aridx.ist aridx.idx); \
+	(cd tmp && xelatex aljabr.2col.tex \
+	 2>&1 > log.latex); \
+
 x2col:
 	java -jar ${SAXON} \
 	-xi:on \

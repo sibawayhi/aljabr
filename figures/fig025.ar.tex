@@ -5,36 +5,24 @@
 \usepackage{unicode-math}
 \usepackage{tikz}
 \usepackage{bidi}  %% for xetex, load last
-
 \begin{document}
-\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
-\setmathfont{XITS Math}
-
-\providecommand{\jadhr}{3}
-\providecommand{\subjadhr}{2}
-
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}%
+\setmathfont{XITS Math}%
+\providecommand{\jadhr}{3}%
+\providecommand{\subjadhr}{2}%
 %% X axis coordinates
-\providecommand{\Lx}{3}
-\providecommand{\Tx}{5}
-\providecommand{\Bx}{7}
-\providecommand{\Dx}{10}
-
+\providecommand{\Lx}{3}%
+\providecommand{\Tx}{5}%
+\providecommand{\Bx}{7}%
+\providecommand{\Dx}{10}%
 %% Y axis coordinates
-\providecommand{\Hy}{3}
-\providecommand{\My}{5}
-
-%% xy = 10 jadhrs divided by 4
-\providecommand{\xy}{2.5}
-\providecommand{\jadhrheight}{\jadhr}
-
-\providecommand{\ww}{2 * \xy + \jadhr}
-
+\providecommand{\Hy}{3}%
+\providecommand{\My}{5}%
 \providecommand{\Ha}{ه‍} % ZWJ U+200D
 \providecommand{\Jīm}{ج‍} % ZWJ U+200D
 \providecommand{\Kaf}{ڪ} % Swash kaf U+06AA
-
-
-\begin{tikzpicture}[scale=0.7]
+\noindent
+\begin{tikzpicture}[scale=0.8]
   % vertical axis
   \coordinate [label={below left:{ن}}] (Origin) at (0, 0);
   %% Baseline coordinates
@@ -90,7 +78,7 @@
   \draw [thick] (M) -- (H);
 
   %% Surface L HH: 2 x 2
-  \draw [thick] (Z)   -- (HH);
+  % \draw [thick] (Z)   -- (HH);
   \coordinate [label={above:{٢}}] ()
   at (+\Lx + \subjadhr/2, \Hy);
   \draw [thick] (HH) -- (K);
@@ -103,6 +91,6 @@
   \coordinate [label={right:{٢}}] ()
   at (+\Lx, \subjadhr/2 + \Hy);
 
+% \draw [red, overlay] (current bounding box.south west) rectangle (current bounding box.north east);
 \end{tikzpicture}
-
 \end{document}

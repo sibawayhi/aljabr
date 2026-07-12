@@ -5,16 +5,16 @@
 \usepackage{fontspec}
 
 \begin{document}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations,decorations.pathreplacing}
+\usetikzlibrary{patterns}
 \providecommand{\jadhr}{3}
-
 %% X axis coordinates
 \providecommand{\Bx}{5}
 \providecommand{\Ax}{8}
-
 %% Y axis
 \providecommand{\By}{5}
 \providecommand{\Ay}{8}
-
 %% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
 \providecommand{\A}  {A}%% {ا}
 \providecommand{\Ba} {B}  %% {ٮ}
@@ -28,10 +28,10 @@
 \providecommand{\Lam}{L} %% {ل}
 \providecommand{\M}  {M}   %% {م}
 \providecommand{\N}  {N}   %% {ن}
-
-\begin{tikzpicture}[scale=0.8]
+\begin{tikzpicture}[scale=0.7]
   %% Baseline X coordinates (RTL): د ج
   \coordinate [label={below right:{\Ha}}] (H) at (\Ax, 0);
+  \coordinate (BB) at (\Ax, \By);
 
   %% Midline 1 X coordinates (RTL): ٮ
   \coordinate [label={above right:{\Ba}}] (B) at (\Bx, \By);
@@ -47,6 +47,10 @@
   \coordinate [label={center:{$x^2$}}] ()
   at (\Bx + \jadhr/2, \By + \jadhr/2);
 
+  \path (B) -- (BB) node[midway,below] {$x$};
+  \path (B) -- (\Bx, \Ay) node[midway,left] {$x$};
+
+
   %% lower left square
   \draw [thick,red] (0,0) -- (\Bx, 0)
   -- (\Bx,\By) -- (0,\By) -- cycle;
@@ -55,27 +59,30 @@
 
   %% upper left rect (Jīm)
   \draw [thick] (0,\By) -- (0,\Ay) -- (\Bx,\Ay);
-  \coordinate [label={right:{$x$}}] ()
-  at (0, \By + \jadhr/2);
-  \coordinate [label={below:{$\alpha=\tfrac{10}{2}$}}] ()
-  at (\Bx / 2, \Ay);
+  % \coordinate [label={right:{$x$}}] ()
+  % at (0, \By + \jadhr/2);
   \coordinate [label={center:{\Jīm}}] ()
   at (0 + \Bx/2, \By + \jadhr/2);
 
+  \draw[decorate,
+  decoration={brace,mirror,amplitude=5pt,raise=4pt}]
+  (0,\By) -- node[below=8pt] {$\tfrac{10}{2}$}  (B);
+
   %% lower right rect (Dal)
   \draw [thick] (\Bx,0) -- (\Ax,0) -- (\Ax,\By);
-  \coordinate [label={left:{$\alpha$}}] ()
-  at (\Ax, \By/2);
-  \coordinate [label={above:{$x$}}] ()
-  at (\Bx + \jadhr/2, 0);
   \coordinate [label={center:{\Dal}}] ()
   at (\Bx + \jadhr/2, \By/2);
 
-  \coordinate [label={right:{$x^2+J+D=39$}}] ()
-  at (\Ax + 0.2, \Ay);
+  \draw[decorate,
+  decoration={brace,mirror,amplitude=5pt,raise=4pt}]
+  (H) -- node[right=8pt] {$\tfrac{10}{2}$}  (BB);
 
-  % fig label
-  \coordinate [label={below:{$x^2 + 10x = 39\ \therefore\ x=3$}}] ()
+  \path (Z) -- (A) node[midway,above] {$x^2+J+D=39$};
+ % [label={above:{$x^2+J+D=39$}}] ()
+ %  at (\Ax + 0.2, \Ay);
+
+  % fig label x^2 + 10x = 39
+  \coordinate [label={below:{$\therefore\ x=3$}}] ()
   at (4, 0);
 \end{tikzpicture}
 
