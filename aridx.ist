@@ -1,0 +1,8 @@
+% style file for indexing ( $ man makeindex)
+preamble "\\raggedleft\\begin{theindex}\\begin{RTLitems}\\arsegfont\n"
+postamble "\\end{RTLitems}\\end{theindex}\n"
+
+delim_0 "\ "
+delim_1 "، "
+delim_2 "، "
+delim_n "، "
