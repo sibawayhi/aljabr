@@ -1,0 +1,22 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=0.8]
+  \tkzDefPoints{0/0/A, 0/6/B, 8/6/C}
+  % Draw polygon and diagonals
+  \tkzDrawPolygon(A,B,C)
+
+  \path (A)--(B) node[midway,left]  {6};
+  \path (B)--(C) node[midway,above] {8};
+  \path (C)--(A) node[midway,below right] {10};
+
+\end{tikzpicture}
+
+\end{document}

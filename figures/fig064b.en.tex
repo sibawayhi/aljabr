@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\noindent
+\begin{tikzpicture}[scale=0.6]
+  \usetikzlibrary{decorations.text}
+  \draw [rotate=-90, postaction={decorate,
+    decoration={
+      text along path,
+      text={circumference: 22 cubits},
+      text align={center},
+      reverse path,
+      raise=4pt
+    }}] (0,0) circle (3.5);
+  \draw (0, -3.5) -- (0, 3.5);
+  \node [right] at (0,0) {7};
+  % expand to include decoration
+  \path[draw=none] (0,0) circle (4.3);
+  % \filldraw (0,0) circle (1.5pt); % center dot
+\end{tikzpicture}
+\end{document}

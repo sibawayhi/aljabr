@@ -1,0 +1,30 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=0.6]
+  \tkzDefPoints{0/0/A, 3/0/B, 16/0/C, 19/4/D, 16/4/E, 3/4/F}
+  \tkzDrawPolygon(A,C,D,F)
+  \tkzDrawSegments(B,F C,E)
+
+  \path (B)--(E) node[midway,align=center]
+  {quadratured fig. \\ assimilated to the eye-shaped fig.};
+
+  \path (A)--(B) node[midway,below] {3};
+  \path (B)--(C) node[midway,below] {13};
+  \path (C)--(D) node[midway,right] {5};
+  \path (C)--(E) node[midway,right] {4};
+  \path (D)--(E) node[midway,above] {3};
+  \path (E)--(F) node[midway,above] {13};
+  \path (F)--(B) node[midway,left] {4};
+  \path (F)--(A) node[midway,left]  {5};
+
+\end{tikzpicture}
+
+\end{document}

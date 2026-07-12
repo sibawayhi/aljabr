@@ -1,0 +1,35 @@
+\documentclass{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{bidi}
+\noindent
+\begin{document}
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+\begin{tikzpicture}[scale=0.6]
+ % 1. Define the base points A and B (base side length c)
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(9,0){B}
+
+  % 2. Find vertex C using circle intersections
+  % Radius from A equals side b
+  % radius from B equals side a
+  \tkzInterCC[R](A,6)(B,5)
+  \tkzGetPoints{C}{D} % C is the upper intersection
+
+  % 3. Draw the triangle
+  \tkzDrawPolygon(A,B,C)
+
+  \tkzDefPointBy[projection = onto A--B](C) \tkzGetPoint{H}
+  \draw (C) -- (H);
+
+  \path (A)--(B) node[midway,below]  {\RL{٩}};
+  \path (B)--(C) node[midway,above right]  {\RL{٥}};
+  \path (C)--(A) node[midway,above left]   {\RL{٦}};
+
+  % \draw [red, overlay] (current bounding box.south west) rectangle (current bounding box.north east);
+\end{tikzpicture}
+\end{document}

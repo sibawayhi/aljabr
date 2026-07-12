@@ -1,0 +1,37 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{bidi}
+
+\begin{document}
+
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\begin{tikzpicture}[scale=0.9]
+  % Define vertices based on half-diagonals (4,0) and (0,3)
+  \tkzDefPoints{3/0/A, 0/4/B, -3/0/C, 0/-4/D, 0/0/O}
+  % Draw polygon and diagonals
+  \tkzDrawPolygon(A,B,C,D)
+  \tkzDrawSegments(A,C B,D)
+
+  \path (O)--(B) node[pos=0.2,align=center]
+  {\RL{المساحة ٢٤} \\ \RL{ذراعًا}};
+
+  \path (A)--(B) node[midway,sloped,above] {\RL{٥}};
+  \path (B)--(C) node[midway,sloped,above] {\RL{٥}};
+  \path (C)--(D) node[midway,sloped,below] {\RL{٥}};
+  \path (D)--(A) node[midway,sloped,below] {\RL{٥}};
+
+  \path (O)--(A) node[pos=0.7,above] {\RL{٣}};
+  \path (O)--(C) node[pos=0.7,above] {\RL{٣}};
+  \path (O)--(B) node[pos=0.7,right] {\RL{٤}};
+  \path (O)--(D) node[pos=0.7,right] {\RL{٤}};
+
+\end{tikzpicture}
+
+\end{document}

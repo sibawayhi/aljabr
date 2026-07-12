@@ -1,0 +1,26 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{bidi}
+
+\begin{document}
+
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\begin{tikzpicture}[scale=0.6]
+  \tkzDefPoints{0/0/A, 0/6/B, 8/6/C}
+  % Draw polygon and diagonals
+  \tkzDrawPolygon(A,B,C)
+
+  \path (A)--(B) node[midway,left]  {\RL{٦}};
+  \path (B)--(C) node[midway,above] {\RL{٨}};
+  \path (C)--(A) node[midway,below right] {\RL{١٠}};
+
+\end{tikzpicture}
+
+\end{document}

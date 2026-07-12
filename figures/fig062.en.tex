@@ -1,0 +1,30 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=0.6]
+  \tkzDefPoint(-5,0){A}
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(5,0){B}
+  \tkzDefTriangle[equilateral](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawPolygon(A,B,C)
+
+  \path (A)--(B) node[midway,below] {10};
+  \path (B)--(C) node[midway,right] {10};
+  \path (C)--(A) node[midway,left]  {10};
+
+  \draw (O) -- (C);
+
+  \path (O) -- (C) node[pos=0.5,sloped,below]
+  {$\sqrt{75}$};
+
+\end{tikzpicture}
+
+\end{document}

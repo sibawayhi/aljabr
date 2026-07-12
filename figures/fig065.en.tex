@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{fontspec}
+\usepackage{tikz}
+\begin{document}
+\noindent
+\begin{tikzpicture}[scale=0.5]
+  \draw (-2, 0)  -- (2, 0);
+  \draw (-1, 10) -- (1, 10);
+  % vertical
+  \draw (-2, 0) -- (-1, 10);
+  \draw (0, 0)  -- (0, 10);
+  \draw (2, 0)  -- (1, 10);
+  \node [below] at (0,0) {4};
+  \path (0,0)--(0,10) node[midway,left]  {10};
+  \node [above] at (0,10) {2};
+\end{tikzpicture}
+\end{document}

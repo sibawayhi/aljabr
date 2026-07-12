@@ -1,0 +1,45 @@
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{bidi}
+
+\begin{document}
+
+%% A ا B ٮ C ج D د E ه F ز G ح H ط J ك K ل L م M ن
+\providecommand{\A} {ا}
+\providecommand{\Ba}   {ٮ}
+\providecommand{\Jīm}  {ج‍} % ZWJ U+200D
+\providecommand{\Dal}  {د}
+\providecommand{\Ha}   {ه‍} % ZWJ U+200D
+\providecommand{\Z}    {ز}
+\providecommand{\HH}   {ح}
+\providecommand{\TT}   {ط}
+\providecommand{\K}    {\tiny ڪ} %% Swash kaf U+06AA
+\providecommand{\Lam}  {ل}
+\providecommand{\M}    {م}
+\providecommand{\N}    {ن}
+
+\providecommand{\diam}{6pt}
+
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\begin{tikzpicture}[scale=0.7]
+  \tkzDefPoints{0/0/A, 5/0/B, 5/5/C, 0/5/D}
+  \draw (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw (A) -- (C);
+
+  \path (A)--(B) node[midway,below] {\RL{٥}};
+  \path (B)--(C) node[midway,right] {\RL{٥}};
+  \path (C)--(D) node[midway,above] {\RL{٥}};
+  \path (D)--(A) node[midway,left] {\RL{٥}};
+
+  \path (A)--(C) node[midway,align=center]
+  {\RL{المساحة ٢٥} \\ \RL{ذراعًا}};
+
+\end{tikzpicture}
+
+\end{document}

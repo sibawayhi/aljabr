@@ -1,0 +1,55 @@
+\documentclass{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{unicode-math}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{bidi}
+\begin{document}
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+\noindent
+\begin{tikzpicture}[scale=0.5]
+ % 1. Define the base points A and B (base side length c)
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(12,0){B}
+
+  % 2. Find vertex C using circle intersections
+  % Radius from A equals side b
+  % radius from B equals side a
+  \tkzInterCC[R](A,10)(B,10)
+  \tkzGetPoints{C}{D} % C is the upper intersection
+
+  % 3. Draw the triangle
+  \tkzDrawPolygon(A,B,C)
+  % the perpendicular
+  \tkzDefPointBy[projection = onto A--B](C) \tkzGetPoint{H}
+  \draw (C) -- (H);
+
+  % Get point 6 units (60%) along the line
+  \coordinate (D) at ($(B)!0.6!(C)$);
+  % corresponding perpendicular
+  \tkzDefPointBy[projection = onto A--B](D) \tkzGetPoint{DD}
+  \draw (D) -- (DD);
+
+  % Get point 6 units (60%) along the line
+  \coordinate (E) at ($(A)!0.6!(C)$);
+  % corresponding perpendicular
+  \tkzDefPointBy[projection = onto A--B](E) \tkzGetPoint{EE}
+  \draw (E) -- (EE);
+
+  \draw (E) -- (D);
+
+  % side labels
+  \path (B)--(D) node[midway,right] {\RL{٦}};
+  \path (D)--(C) node[midway,right] {\RL{٤}};
+  \path (A)--(E) node[midway,left]  {\RL{٦}};
+  \path (E)--(C) node[midway,left]  {\RL{٤}};
+  % bottom labels
+  \path (A)--(EE) node[midway,below] {٣$\tfrac{٣}{٥}$};
+  \node [below] at (H) {$٤\tfrac{٤}{٥}$};
+  \path (DD)--(B) node[midway,below] {٣$\tfrac{٣}{٥}$};
+
+\end{tikzpicture}
+
+\end{document}

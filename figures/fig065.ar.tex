@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{bidi}
+\begin{document}
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\noindent
+\begin{tikzpicture}[scale=0.5]
+  \draw (-2, 0)  -- (2, 0);
+  \draw (-1, 10) -- (1, 10);
+  % vertical
+  \draw (-2, 0) -- (-1, 10);
+  \draw (0, 0)  -- (0, 10);
+  \draw (2, 0)  -- (1, 10);
+  \node [below] at (0,0) {٤};
+  \path (0,0)--(0,10) node[midway,left]  {١٠};
+  \node [above] at (0,10) {٢};
+\end{tikzpicture}
+\end{document}

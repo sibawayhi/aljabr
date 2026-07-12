@@ -1,0 +1,34 @@
+%% (√(200) - 10) + (20 - √(200))
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{bidi}
+
+\begin{document}
+
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\setmathfont{XITS Math}
+
+\begin{tikzpicture}[scale=0.4]
+  \tkzDefPoint(-5,0){A}
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(5,0){B}
+  \tkzDefTriangle[equilateral](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawPolygon(A,B,C)
+
+  \path (A)--(B) node[midway,below] {\RL{١٠}};
+  \path (B)--(C) node[midway,right] {\RL{١٠}};
+  \path (C)--(A) node[midway,left]  {\RL{١٠}};
+
+  \draw (O) -- (C);
+
+  \path (O) -- (C) node[pos=0.5,sloped,below]
+  {\RL{جذر ٧٥}};
+
+\end{tikzpicture}
+
+\end{document}

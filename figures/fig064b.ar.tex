@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{bidi}
+\noindent
+\begin{document}
+\setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
+\begin{tikzpicture}[scale=0.4]
+  \usetikzlibrary{decorations.text}
+  \draw [rotate=-90, postaction={decorate,
+    decoration={
+      text along path,
+      text={{ذراعًا} {٢٢} {الدور}},
+      text align={center},
+      reverse path,
+      raise=4pt
+    }}] (0,0) circle (3.5);
+  \draw (0, -3.5) -- (0, 3.5);
+  \node [right] at (0,0) {٧};
+  % expand to include decoration
+  \path[draw=none] (0,0) circle (4.3);
+
+  % \filldraw (0,0) circle (1.5pt); % center dot
+
+\end{tikzpicture}
+
+\end{document}

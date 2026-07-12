@@ -1,0 +1,26 @@
+\documentclass[tikz]{standalone}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,fancyhdr}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usepackage{bidi}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.0]
+  \tkzDefPoints{0/0/A, 5/0/B, 5/5/C, 0/5/D}
+  \draw (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw (A) -- (C);
+
+  \path (A)--(B) node[midway,below] {5};
+  \path (B)--(C) node[midway,right] {5};
+  \path (C)--(D) node[midway,above] {5};
+  \path (D)--(A) node[midway,left]  {5};
+
+  \path (A)--(C) node[midway,align=center]
+  {area: 25 cubits};
+
+\end{tikzpicture}
+
+\end{document}
