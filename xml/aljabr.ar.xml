@@ -9,91 +9,38 @@
 
   <!-- <مقطع هوية='٥١٢٠٦'>بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</مقطع> -->
 
-  <xi:include href="p015.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <!-- <xi:include href="p016a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <جزء هوية='١١٣٤٨'>
+    <!-- <عنوان>كِتَابُ الْجَبْرِ وَالْمُقابَلةِ</عنوان> -->
+    <عنوان>النَّصُّ وَالتَّرْجَمةُ</عنوان>
+  </جزء>
 
-  <!-- <!-\- Ch: numbers and their types  -\-> -->
-  <!-- <xi:include href="p016b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p017a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch00_preface.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- <!-\- Ch: equivalences -\-> -->
-  <!-- <xi:include href="p017b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p018a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch01_numbers.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- <!-\- Ch: combinations -\-> -->
-  <!-- <xi:include href="p018b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p019.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p020.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p021a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch02_monomials.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- <!-\- Justification for Halving (diagrams) -\-> -->
-  <!-- <xi:include href="p021b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p022.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p023.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p024.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p025.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p026.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p027a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch03_binomials.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- <!-\- Multiplication -\-> -->
-  <!-- <xi:include href="p027b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p028.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p029.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p030a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch04_diagrams_halving.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- <!-\- <!-\\- Accumulation and Decrease الجمع والنقصان -\\-> -\-> -->
-  <!-- <xi:include href="p030b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <!-\- Partitioning القسم -\-> -->
-  <!-- <xi:include href="p031.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p032a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch05_multiplication.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- <!-\- diagrams: aggregation and decrease -\-> -->
-  <!-- <xi:include href="p032b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p033.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p034a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <!-\- Six Problems -\-> -->
-  <!-- <xi:include href="p034b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p035.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p036.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p037.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p038a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch06_aggregation.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- Misc. Problems -->
-  <xi:include href="p038b.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p039.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p040.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p041.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p042.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p043.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p044.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p045.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p046.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p047.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p048.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p049.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p050.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p051.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p052.ar.xml" parse="xml" xpointer="element(/1)"/>
-  <xi:include href="p053a.ar.xml" parse="xml" xpointer="element(/1)"/>
+  <!-- <xi:include href="ch07_replication.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- <!-\- Business -\-> -->
-  <!-- <xi:include href="p053b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p054a.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch08_partitioning.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <!-- <!-\- Spatial Measurement -\-> -->
-  <!-- <xi:include href="p054b.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p055.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p056.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p057.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p058.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p059.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p060.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p061.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p062.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p063.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p064.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p065.ar.xml" parse="xml" xpointer="element(/1)"/> -->
-  <!-- <xi:include href="p066.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+  <!-- <xi:include href="ch09_diagrams_aggregation.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+
+  <!-- <xi:include href="ch10_six_problems.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+
+  <xi:include href="ch11_misc_problems.ar.xml" parse="xml" xpointer="element(/1)"/>
+
+  <!-- <xi:include href="ch12_business.ar.xml" parse="xml" xpointer="element(/1)"/> -->
+
+  <!-- <xi:include href="ch13_spatial_measurement.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
   <!-- Book of Bequests كتاب الوصايا -->
   <!-- <xi:include href="p067.ar.xml" parse="xml" xpointer="element(/1)"/> -->

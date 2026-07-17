@@ -45,7 +45,7 @@ ART=aljabr
 	-x:org.apache.xerces.parsers.SAXParser \
 	-xsl:${XSL}/book2tex.2col.xsl \
 	-s:xml/aljabr.${LANG}.xml \
-	-o:tmp/aljabr.2col.tex \
+	-o:tmp/aljabr.tex \
 	artid=${ART} \
 	argitrev=`cd ${SRCDIR} && git rev-parse --short HEAD` \
 	engitrev=`git rev-parse --short HEAD` \
@@ -55,14 +55,18 @@ ART=aljabr
 	igt=${IGT} \
 	commentary=${CMT} \
 	multiling=${MULTILING};
-	(cd tmp && xelatex aljabr.2col.tex \
+	(cd tmp && xelatex aljabr.tex \
 	2>&1 > log.latex);
 
 idx:
-	(cd tmp && makeindex aljabr.2col.idx); \
+	(cd tmp && makeindex aljabr.idx); \
 	(cd tmp && makeindex -s ../aridx.ist aridx.idx); \
-	(cd tmp && xelatex aljabr.2col.tex \
+	(cd tmp && xelatex aljabr.tex \
 	 2>&1 > log.latex); \
+
+bib:
+	(cd tmp && biber aljabr);
+
 
 x2col:
 	java -jar ${SAXON} \
@@ -109,3 +113,6 @@ ar2en:
 	-xsl:${XMLTOOLS}/tools/sib.ar2en.xsl \
 	artid=${P};
 
+clean:
+	-rm tmp/*.aux tmp/*.bbl tmp/*.bcf tmp/*.blg;
+	-rm tmp/*.idx tmp/*.lof tmp/*.log tmp/*.run.xml tmp/*.toc
