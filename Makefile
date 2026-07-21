@@ -31,6 +31,7 @@ DRAFT=
 TRANS=1
 IGT=
 CMT=
+IMG=0
 MULTILING=
 
 #FIXME: also pass directory path containing article
@@ -54,18 +55,23 @@ ART=aljabr
 	translate=${TRANS} \
 	igt=${IGT} \
 	commentary=${CMT} \
+	images=${IMG} \
 	multiling=${MULTILING};
 	(cd tmp && xelatex aljabr.tex \
 	2>&1 > log.latex);
 
 idx:
-	(cd tmp && makeindex aljabr.idx); \
 	(cd tmp && makeindex -s ../aridx.ist aridx.idx); \
-	(cd tmp && xelatex aljabr.tex \
-	 2>&1 > log.latex); \
 
 bib:
 	(cd tmp && biber aljabr);
+
+gloss:
+	(cd tmp && makeglossaries aljabr);
+
+xel:
+	(cd tmp && xelatex aljabr.tex \
+	2>&1 > log.latex); \
 
 
 x2col:

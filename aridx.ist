@@ -2,6 +2,10 @@
 preamble "\\raggedleft\\begin{theindex}\\begin{RTLitems}\\arsegfont\n"
 postamble "\\end{RTLitems}\\end{theindex}\n"
 
+% item_0 "\n \\item\\hypertarget{idx:"
+% item_01 "}\n \\subitem %x"
+% item_x1 "}\n \\subitem %y"
+% item_1 "}\n \\subitem"
 delim_0 "\ "
 delim_1 "، "
 delim_2 "، "
