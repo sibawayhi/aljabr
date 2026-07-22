@@ -12,15 +12,15 @@
 % \setmainfont[Script=Arabic,Mapping=arabicdigits]{Amiri}
 % \setmathfont{XITS Math}
 
-\begin{tikzpicture}[scale=0.9]
+\begin{tikzpicture}[scale=0.8]
   % Define vertices based on half-diagonals (4,0) and (0,3)
   \tkzDefPoints{3/0/A, 0/4/B, -3/0/C, 0/-4/D, 0/0/O}
   % Draw polygon and diagonals
   \tkzDrawPolygon(A,B,C,D)
   \tkzDrawSegments(A,C B,D)
 
-  \path (O)--(B) node[pos=0.2,align=center]
-  {area: 24 cubits};
+  \path (D)--(B) node[midway,align=center]
+  {area:\\ 24 cubits};
 
   \path (A)--(B) node[midway,sloped,above] {\RL{5}};
   \path (B)--(C) node[midway,sloped,above] {\RL{5}};

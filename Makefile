@@ -32,6 +32,7 @@ TRANS=1
 IGT=
 CMT=
 IMG=0
+TRIM=69
 MULTILING=
 
 #FIXME: also pass directory path containing article
@@ -56,6 +57,7 @@ ART=aljabr
 	igt=${IGT} \
 	commentary=${CMT} \
 	images=${IMG} \
+	trim=${TRIM} \
 	multiling=${MULTILING};
 	(cd tmp && xelatex aljabr.tex \
 	2>&1 > log.latex);

@@ -37,7 +37,7 @@
 
   <!-- <xi:include href="ch11_misc_problems.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
-  <xi:include href="ch12_business.ar.xml" parse="xml" xpointer="element(/1)"/>
+  <!-- <xi:include href="ch12_business.ar.xml" parse="xml" xpointer="element(/1)"/> -->
 
   <xi:include href="ch13_spatial_measurement.ar.xml" parse="xml" xpointer="element(/1)"/>
 
